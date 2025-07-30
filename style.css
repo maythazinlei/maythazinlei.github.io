@@ -316,13 +316,15 @@ a {
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .home-hero-para {
     font-size: 1.25rem;
     line-height: 1.6;
     margin-bottom: 2rem;
-    opacity: 0.9;
+    opacity: 0.95;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .home-hero-button-wrapper {
@@ -336,6 +338,40 @@ a {
     right: 0;
     bottom: 0;
     z-index: 1;
+    overflow: hidden;
+}
+
+.home-hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+}
+
+/* Alternative approach for better coverage */
+@supports (object-fit: cover) {
+    .home-hero-video {
+        object-fit: cover;
+    }
+}
+
+@supports not (object-fit: cover) {
+    .home-hero-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+    }
 }
 
 .home-hero-video-overlay {
@@ -344,8 +380,142 @@ a {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(56, 88, 249, 0.8) 0%, rgba(120, 75, 162, 0.8) 100%);
+    background: linear-gradient(135deg, rgba(56, 88, 249, 0.7) 0%, rgba(120, 75, 162, 0.7) 100%);
     z-index: 2;
+}
+
+/* Landing page enhancements */
+.home-hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.home-hero-content-inner {
+    animation: fadeInUp 1.2s ease-out;
+}
+
+/* Force video to cover entire viewport */
+.home-hero-background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Responsive video scaling for perfect coverage */
+@media (max-aspect-ratio: 16/9) {
+    .home-hero-video {
+        width: 100vw;
+        height: 56.25vw; /* 16:9 aspect ratio */
+        min-height: 100vh;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .home-hero-video {
+        width: 177.78vh; /* 16:9 aspect ratio */
+        height: 100vh;
+        min-width: 100vw;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+    }
+}
+
+/* Video Sections */
+.sticky-video-container {
+    position: relative;
+    z-index: 5;
+}
+
+.sticky-video-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.sticky-video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.sticky-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+}
+
+.sticky-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    transition: all 0.6s ease;
+}
+
+.sticky-video-section[data-video-index="1"] .sticky-video-overlay {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.8) 0%, rgba(255, 142, 83, 0.8) 100%);
+}
+
+.sticky-video-section[data-video-index="2"] .sticky-video-overlay {
+    background: linear-gradient(135deg, rgba(56, 88, 249, 0.8) 0%, rgba(120, 75, 162, 0.8) 100%);
+}
+
+.sticky-video-section[data-video-index="3"] .sticky-video-overlay {
+    background: linear-gradient(135deg, rgba(76, 217, 100, 0.8) 0%, rgba(52, 170, 220, 0.8) 100%);
+}
+
+.sticky-video-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    color: white;
+}
+
+.sticky-video-text {
+    text-align: center;
+    max-width: 600px;
+}
+
+.sticky-video-title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.sticky-video-description {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    opacity: 0.95;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* About Section */
@@ -728,6 +898,19 @@ a {
         flex-direction: column;
         align-items: center;
     }
+    
+    /* Video sections mobile optimizations */
+    .sticky-video-title {
+        font-size: 2.5rem;
+    }
+    
+    .sticky-video-description {
+        font-size: 1.1rem;
+    }
+    
+    .sticky-video-text {
+        padding: 0 1rem;
+    }
 }
 
 @media screen and (max-width: 479px) {
@@ -846,7 +1029,8 @@ a {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
 .location-text {

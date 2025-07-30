@@ -176,23 +176,83 @@ document.addEventListener('DOMContentLoaded', function() {
     // Background video handling
     const heroVideo = document.querySelector('#hero-video');
     if (heroVideo) {
-        // Ensure video plays
-        heroVideo.play().catch(e => {
-            console.log('Video autoplay prevented:', e);
-        });
+        // Set video properties for optimal performance
+        heroVideo.muted = true;
+        heroVideo.loop = true;
+        heroVideo.autoplay = true;
+        heroVideo.playsInline = true;
+        
+        // Ensure proper video positioning
+        const resizeVideo = () => {
+            const videoRect = heroVideo.getBoundingClientRect();
+            const containerRect = heroVideo.parentElement.getBoundingClientRect();
+            
+            // Force video to cover the entire container
+            heroVideo.style.width = '100%';
+            heroVideo.style.height = '100%';
+            heroVideo.style.minWidth = '100vw';
+            heroVideo.style.minHeight = '100vh';
+        };
+        
+        // Initial resize
+        resizeVideo();
+
+        // Ensure video plays with fallback handling
+        const playVideo = async () => {
+            try {
+                await heroVideo.play();
+                console.log('Video is playing successfully');
+            } catch (error) {
+                console.log('Video autoplay prevented:', error);
+                // Show fallback background image
+                const heroSection = document.querySelector('.section-home-hero');
+                if (heroSection) {
+                    heroSection.style.backgroundImage = 'url(img/background.jpeg)';
+                    heroSection.style.backgroundSize = 'cover';
+                    heroSection.style.backgroundPosition = 'center';
+                    heroSection.style.backgroundAttachment = 'fixed';
+                }
+            }
+        };
+
+        // Wait for video to load before playing
+        if (heroVideo.readyState >= 3) {
+            playVideo();
+        } else {
+            heroVideo.addEventListener('canplaythrough', playVideo, { once: true });
+        }
 
         // Pause video when not in view to save bandwidth
         const videoObserver = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    heroVideo.play();
+                    if (heroVideo.paused) {
+                        playVideo();
+                    }
                 } else {
                     heroVideo.pause();
                 }
             });
-        }, { threshold: 0.5 });
+        }, { threshold: 0.3 });
 
         videoObserver.observe(heroVideo);
+
+        // Handle video loading errors
+        heroVideo.addEventListener('error', function() {
+            console.log('Video failed to load, using fallback background');
+            const heroSection = document.querySelector('.section-home-hero');
+            if (heroSection) {
+                heroSection.style.backgroundImage = 'url(img/background.jpeg)';
+                heroSection.style.backgroundSize = 'cover';
+                heroSection.style.backgroundPosition = 'center';
+                heroSection.style.backgroundAttachment = 'fixed';
+            }
+        });
+
+        // Optimize video on window resize
+        window.addEventListener('resize', WebflowUtils.debounce(() => {
+            resizeVideo();
+        }, 250));
     }
 
     // Works item hover animations
@@ -252,7 +312,47 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    console.log('Webflow-style portfolio website initialized successfully!');
+    // Video Sections Management
+    const videoSections = document.querySelectorAll('.sticky-video-section');
+    const videos = document.querySelectorAll('.sticky-video');
+
+    // Initialize all videos
+    function initVideos() {
+        videos.forEach((video, index) => {
+            video.muted = true;
+            video.loop = true;
+            video.playsInline = true;
+        });
+    }
+
+    // Intersection Observer for video playback
+    const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const video = entry.target.querySelector('.sticky-video');
+            
+            if (entry.isIntersecting) {
+                // Video section is in view - play video
+                if (video && video.paused) {
+                    video.play().catch(e => console.log('Video play error:', e));
+                }
+            } else {
+                // Video section is out of view - pause video
+                if (video && !video.paused) {
+                    video.pause();
+                }
+            }
+        });
+    }, {
+        threshold: 0.5 // Video plays when 50% visible
+    });
+
+    // Initialize videos and observe sections
+    initVideos();
+    videoSections.forEach(section => {
+        videoObserver.observe(section);
+    });
+
+    console.log('Webflow-style portfolio website with sticky videos initialized successfully!');
 });
 
 // Webflow-style utility functions
