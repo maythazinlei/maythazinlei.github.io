@@ -302,6 +302,21 @@ a {
     justify-content: center;
     overflow: hidden;
     color: white;
+    background-color: #C8A97E;
+}
+
+.section-home-hero::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background-image: url(img/profile_pic.jpeg);
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    z-index: 0;
 }
 
 .home-hero-content-wrapper {
@@ -374,14 +389,31 @@ a {
     }
 }
 
+.home-hero-video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-image: url(img/profile_pic.jpeg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 .home-hero-video-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(56, 88, 249, 0.7) 0%, rgba(120, 75, 162, 0.7) 100%);
     z-index: 2;
+}
+
+.home-hero-background-wrapper {
+    background-position: 50% 50%;
+    background-size: cover;
 }
 
 /* Landing page enhancements */
