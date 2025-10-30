@@ -11,8 +11,31 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize Sticky Cards
     initFramerStickyCards();
     
-    // Smooth scrolling for navigation links
+    // Initialize Single-Page Navigation
+    initSinglePageNavigation();
+    
+    // Initialize Portfolio Gallery
+    initPortfolioGallery();
+    
+    // Initialize Video Modal
+    initVideoModal();
+    
+    // Initialize Mobile Menu
+    initMobileMenu();
+    
+    // Initialize Contact Form
+    initContactForm();
+    
+    // Initialize Scroll Progress
+    initScrollProgress();
+});
+
+// Single-Page Navigation System
+function initSinglePageNavigation() {
     const navLinks = document.querySelectorAll('.framer-nav-link');
+    const sections = document.querySelectorAll('section[id]');
+    
+    // Smooth scrolling for navigation links
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -25,12 +48,391 @@ document.addEventListener('DOMContentLoaded', function() {
                     top: offsetTop,
                     behavior: 'smooth'
                 });
+                
+                // Close mobile menu if open
+                const navMenu = document.querySelector('.framer-nav-menu');
+                const menuToggle = document.querySelector('.framer-menu-toggle');
+                if (navMenu.classList.contains('framer-nav-menu-open')) {
+                    navMenu.classList.remove('framer-nav-menu-open');
+                    menuToggle.classList.remove('active');
+                }
             }
         });
     });
+    
+    // Active section highlighting on scroll
+    function updateActiveNav() {
+        let currentSection = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 150;
+            const sectionHeight = section.offsetHeight;
+            
+            if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+        
+        // Update active nav link
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${currentSection}`) {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    // Throttled scroll event listener
+    let ticking = false;
+    function requestTick() {
+        if (!ticking) {
+            window.requestAnimationFrame(updateActiveNav);
+            ticking = true;
+            setTimeout(() => { ticking = false; }, 100);
+        }
+    }
+    
+    window.addEventListener('scroll', requestTick, { passive: true });
+    
+    // Initial call
+    updateActiveNav();
+}
+
+// Mobile Menu System
+function initMobileMenu() {
+    const menuToggle = document.querySelector('.framer-menu-toggle');
+    const navMenu = document.querySelector('.framer-nav-menu');
+    
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            navMenu.classList.toggle('framer-nav-menu-open');
+            this.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                navMenu.classList.remove('framer-nav-menu-open');
+                menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navMenu.classList.contains('framer-nav-menu-open')) {
+                navMenu.classList.remove('framer-nav-menu-open');
+                menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+}
+
+// Portfolio Gallery System
+function initPortfolioGallery() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    
+    if (filterBtns.length === 0 || portfolioItems.length === 0) return;
+    
+    // Filter functionality
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const filter = this.getAttribute('data-filter');
+            
+            // Update active button
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter items
+            portfolioItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+                if (filter === 'all' || category === filter) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 100);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+    });
+    
+    // Add lazy loading to portfolio images
+    const portfolioImages = document.querySelectorAll('.portfolio-thumbnail');
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src || img.src;
+                    img.classList.add('loaded');
+                    imageObserver.unobserve(img);
+                }
+            });
+        }, { rootMargin: '50px' });
+        
+        portfolioImages.forEach(img => imageObserver.observe(img));
+    }
+}
+
+// Video Modal System
+function initVideoModal() {
+    const modal = document.getElementById('video-modal');
+    const modalClose = document.querySelector('.video-modal-close');
+    const playBtns = document.querySelectorAll('.play-btn');
+    const videoFrame = document.getElementById('video-frame');
+    const videoTitle = document.getElementById('video-title');
+    const videoDescription = document.getElementById('video-description');
+    
+    if (!modal || playBtns.length === 0) return;
+    
+    // Video data mapping
+    const videoData = {
+        'bbc-news-coverage': {
+            url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+            title: 'BBC News Coverage',
+            description: 'Comprehensive coverage of social issues affecting Southeast Asian communities, focusing on youth perspectives and economic challenges.'
+        },
+        'youth-documentary': {
+            url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+            title: 'Youth Voices',
+            description: 'A powerful documentary capturing the voices and experiences of young people across Myanmar, highlighting their challenges and aspirations.'
+        },
+        'digital-storytelling': {
+            url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+            title: 'Digital Innovation',
+            description: 'Exploring new approaches to digital storytelling and emerging technologies in media production.'
+        },
+        'economic-coverage': {
+            url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+            title: 'Economic Impact',
+            description: 'Business stories from Thailand covering economic trends and their impact on local communities.'
+        }
+    };
+    
+    // Open modal on play button click
+    playBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const videoId = this.getAttribute('data-video-id');
+            const video = videoData[videoId];
+            
+            if (video) {
+                videoFrame.src = video.url;
+                videoTitle.textContent = video.title;
+                videoDescription.textContent = video.description;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+    
+    // Close modal
+    function closeModal() {
+        modal.classList.remove('active');
+        videoFrame.src = '';
+        document.body.style.overflow = '';
+    }
+    
+    modalClose.addEventListener('click', closeModal);
+    
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+    
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+}
+
+// Contact Form System
+function initContactForm() {
+    const contactForm = document.querySelector('.contact-form');
+    
+    if (!contactForm) return;
+    
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(contactForm);
+        const form_data = {
+            name: formData.get('name') || contactForm.querySelector('input[type="text"]').value,
+            email: formData.get('email') || contactForm.querySelector('input[type="email"]').value,
+            subject: formData.get('subject') || contactForm.querySelector('input[placeholder="Subject"]').value,
+            message: formData.get('message') || contactForm.querySelector('textarea').value
+        };
+        
+        // Basic validation
+        if (!form_data.name || !form_data.email || !form_data.message) {
+            showNotification('Please fill in all required fields.', 'error');
+            return;
+        }
+        
+        if (!isValidEmail(form_data.email)) {
+            showNotification('Please enter a valid email address.', 'error');
+            return;
+        }
+        
+        // Simulate form submission (replace with actual endpoint)
+        const submitBtn = contactForm.querySelector('.btn-primary');
+        const originalText = submitBtn.textContent;
+        
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        // Simulate API call
+        setTimeout(() => {
+            showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+            contactForm.reset();
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            
+            // Track analytics event
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'form_submission', {
+                    'event_category': 'contact',
+                    'event_label': 'contact_form'
+                });
+            }
+        }, 2000);
+    });
+    
+    // Add input validation feedback
+    const inputs = contactForm.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+            validateField(this);
+        });
+        
+        input.addEventListener('input', function() {
+            clearFieldError(this);
+        });
+    });
+}
+
+// Form validation helpers
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function validateField(field) {
+    const value = field.value.trim();
+    let isValid = true;
+    let errorMessage = '';
+    
+    if (field.hasAttribute('required') && !value) {
+        isValid = false;
+        errorMessage = 'This field is required';
+    } else if (field.type === 'email' && value && !isValidEmail(value)) {
+        isValid = false;
+        errorMessage = 'Please enter a valid email';
+    }
+    
+    if (!isValid) {
+        showFieldError(field, errorMessage);
+    }
+    
+    return isValid;
+}
+
+function showFieldError(field, message) {
+    clearFieldError(field);
+    field.style.borderColor = 'rgba(255, 0, 0, 0.8)';
+    
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'field-error';
+    errorDiv.textContent = message;
+    errorDiv.style.cssText = `
+        color: #ff4444;
+        font-size: 0.875rem;
+        margin-top: 0.5rem;
+    `;
+    
+    field.parentNode.appendChild(errorDiv);
+}
+
+function clearFieldError(field) {
+    field.style.borderColor = '';
+    const errorDiv = field.parentNode.querySelector('.field-error');
+    if (errorDiv) {
+        errorDiv.remove();
+    }
+}
+
+// Notification system
+function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.textContent = message;
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: ${type === 'success' ? '#00c851' : type === 'error' ? '#ff4444' : '#17a2b8'};
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 3000;
+        transform: translateX(100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        max-width: 300px;
+        word-wrap: break-word;
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Animate in
+    setTimeout(() => {
+        notification.style.transform = 'translateX(0)';
+    }, 100);
+    
+    // Auto remove
+    setTimeout(() => {
+        notification.style.transform = 'translateX(100%)';
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.parentNode.removeChild(notification);
+            }
+        }, 300);
+    }, 5000);
+}
+
+// Scroll Progress Indicator
+function initScrollProgress() {
+    const progressBar = document.querySelector('.scroll-progress-bar');
+    if (!progressBar) return;
+    
+    function updateProgress() {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        
+        progressBar.style.width = `${Math.min(scrollPercent, 100)}%`;
+    }
+    
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+}
 
     // Mobile menu toggle (Framer style)
-    const menuButton = document.querySelector('.framer-menu-button');
+    const menuButton = document.querySelector('.framer-menu-toggle');
     const navMenu = document.querySelector('.framer-nav-menu');
     
     if (menuButton && navMenu) {

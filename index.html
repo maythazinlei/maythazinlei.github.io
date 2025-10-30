@@ -13,16 +13,30 @@
     <!-- Navigation -->
     <nav class="framer-header" data-framer-name="Navigation">
         <div class="framer-nav-container" data-framer-name="Nav Container">
-            <a href="#" class="framer-logo" data-framer-name="Logo">
+            <a href="#home" class="framer-logo" data-framer-name="Logo">
                 <span data-framer-component-type="RichTextContainer">© May Thazin Lei</span>
             </a>
             <div class="framer-nav-menu" data-framer-name="Nav Menu">
+                <a href="#home" class="framer-nav-link active" data-framer-name="Home Link">Home</a>
+                <a href="#portfolio" class="framer-nav-link" data-framer-name="Portfolio Link">Portfolio</a>
                 <a href="#experience" class="framer-nav-link" data-framer-name="Experience Link">Experience</a>
                 <a href="#about" class="framer-nav-link" data-framer-name="About Link">About</a>
+                <a href="#blog" class="framer-nav-link" data-framer-name="Blog Link">Blog</a>
                 <a href="#contact" class="framer-nav-link" data-framer-name="Contact Link">Contact</a>
             </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="framer-menu-toggle" data-framer-name="Menu Toggle" aria-label="Toggle navigation menu">
+                <span class="framer-menu-line"></span>
+                <span class="framer-menu-line"></span>
+                <span class="framer-menu-line"></span>
+            </button>
         </div>
     </nav>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" data-framer-name="Scroll Progress">
+        <div class="scroll-progress-bar"></div>
+    </div>
 
     <!-- Hero Section -->
     <main class="framer-hero-section" data-framer-name="Hero Section">
@@ -270,6 +284,213 @@
                         <span class="skill-tag">Multimedia</span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="portfolio-container">
+            <div class="portfolio-header">
+                <h2 class="portfolio-title">Portfolio Gallery</h2>
+                <p class="portfolio-description">Showcasing video journalism and documentary work</p>
+            </div>
+            
+            <!-- Filter Buttons -->
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All Work</button>
+                <button class="filter-btn" data-filter="journalism">Video Journalism</button>
+                <button class="filter-btn" data-filter="documentary">Documentary Films</button>
+                <button class="filter-btn" data-filter="multimedia">Multimedia</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+                <!-- Video Item 1 -->
+                <div class="portfolio-item" data-category="journalism">
+                    <div class="portfolio-video-wrapper">
+                        <img src="img/background.jpeg" alt="BBC News Coverage" class="portfolio-thumbnail">
+                        <div class="portfolio-overlay">
+                            <button class="play-btn" data-video-id="bbc-news-coverage">
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="currentColor">
+                                    <path d="M30 10 L50 30 L30 50 Z" fill="white"/>
+                                    <circle cx="30" cy="30" r="28" stroke="white" stroke-width="2" fill="none"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-item-title">BBC News Coverage</h3>
+                        <p class="portfolio-item-description">Social issues in Southeast Asia</p>
+                        <div class="portfolio-meta">
+                            <span class="portfolio-date">2024</span>
+                            <span class="portfolio-client">BBC News</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Item 2 -->
+                <div class="portfolio-item" data-category="documentary">
+                    <div class="portfolio-video-wrapper">
+                        <img src="img/profile_pic.png" alt="Youth Documentary" class="portfolio-thumbnail">
+                        <div class="portfolio-overlay">
+                            <button class="play-btn" data-video-id="youth-documentary">
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="currentColor">
+                                    <path d="M30 10 L50 30 L30 50 Z" fill="white"/>
+                                    <circle cx="30" cy="30" r="28" stroke="white" stroke-width="2" fill="none"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-item-title">Youth Voices</h3>
+                        <p class="portfolio-item-description">Documentary on Myanmar youth</p>
+                        <div class="portfolio-meta">
+                            <span class="portfolio-date">2023</span>
+                            <span class="portfolio-client">Independent Film</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Item 3 -->
+                <div class="portfolio-item" data-category="multimedia">
+                    <div class="portfolio-video-wrapper">
+                        <img src="img/background.jpeg" alt="Digital Storytelling" class="portfolio-thumbnail">
+                        <div class="portfolio-overlay">
+                            <button class="play-btn" data-video-id="digital-storytelling">
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="currentColor">
+                                    <path d="M30 10 L50 30 L30 50 Z" fill="white"/>
+                                    <circle cx="30" cy="30" r="28" stroke="white" stroke-width="2" fill="none"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-item-title">Digital Innovation</h3>
+                        <p class="portfolio-item-description">Multimedia storytelling project</p>
+                        <div class="portfolio-meta">
+                            <span class="portfolio-date">2023</span>
+                            <span class="portfolio-client">Digital Media Lab</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Item 4 -->
+                <div class="portfolio-item" data-category="journalism">
+                    <div class="portfolio-video-wrapper">
+                        <img src="img/profile_pic.png" alt="Economic Coverage" class="portfolio-thumbnail">
+                        <div class="portfolio-overlay">
+                            <button class="play-btn" data-video-id="economic-coverage">
+                                <svg width="60" height="60" viewBox="0 0 60 60" fill="currentColor">
+                                    <path d="M30 10 L50 30 L30 50 Z" fill="white"/>
+                                    <circle cx="30" cy="30" r="28" stroke="white" stroke-width="2" fill="none"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3 class="portfolio-item-title">Economic Impact</h3>
+                        <p class="portfolio-item-description">Business stories from Thailand</p>
+                        <div class="portfolio-meta">
+                            <span class="portfolio-date">2024</span>
+                            <span class="portfolio-client">BBC Business</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="video-modal">
+        <div class="video-modal-content">
+            <button class="video-modal-close">&times;</button>
+            <div class="video-container">
+                <iframe id="video-frame" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <h3 id="video-title"></h3>
+                <p id="video-description"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section">
+        <div class="blog-container">
+            <div class="blog-header">
+                <h2 class="blog-title">Blog & Behind the Scenes</h2>
+                <p class="blog-description">Insights, teasers, and stories from the field</p>
+            </div>
+
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <article class="blog-post">
+                    <div class="blog-image-wrapper">
+                        <img src="img/background.jpeg" alt="Behind the Scenes" class="blog-thumbnail">
+                        <div class="blog-category">Behind the Scenes</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-post-title">Filming in Remote Myanmar</h3>
+                        <p class="blog-excerpt">Challenges and rewards of documentary filmmaking in remote communities...</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Oct 15, 2024</span>
+                            <span class="blog-read-time">5 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-post">
+                    <div class="blog-image-wrapper">
+                        <img src="img/profile_pic.png" alt="Short Film Teaser" class="blog-thumbnail">
+                        <div class="blog-category">Film Teaser</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-post-title">Youth Voices: New Documentary</h3>
+                        <p class="blog-excerpt">A sneak peek at my upcoming documentary featuring youth perspectives...</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Oct 1, 2024</span>
+                            <span class="blog-read-time">3 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-post">
+                    <div class="blog-image-wrapper">
+                        <img src="img/background.jpeg" alt="Journalism Insights" class="blog-thumbnail">
+                        <div class="blog-category">Journalism</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-post-title">The Future of Video Journalism</h3>
+                        <p class="blog-excerpt">How digital transformation is reshaping newsroom workflows...</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Sep 20, 2024</span>
+                            <span class="blog-read-time">7 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="blog-post">
+                    <div class="blog-image-wrapper">
+                        <img src="img/profile_pic.png" alt="Production Notes" class="blog-thumbnail">
+                        <div class="blog-category">Production</div>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="blog-post-title">Camera Gear Essentials</h3>
+                        <p class="blog-excerpt">My go-to equipment for field journalism work...</p>
+                        <div class="blog-meta">
+                            <span class="blog-date">Sep 5, 2024</span>
+                            <span class="blog-read-time">4 min read</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="blog-cta">
+                <button class="btn-secondary">View All Posts</button>
             </div>
         </div>
     </section>
