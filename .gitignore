@@ -4,6 +4,7 @@
 # IDE and editor specific files
 .claude/
 .vscode/
+.antigravitycli/
 
 # macOS specific files
 .DS_Store

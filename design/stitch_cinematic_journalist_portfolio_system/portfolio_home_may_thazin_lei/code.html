@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MAY THAZIN LEI | Documentary Filmmaker &amp; Journalist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#e2e2e2",
+                    "on-primary-fixed": "#1a1c1c",
+                    "surface-variant": "#353534",
+                    "on-error": "#690005",
+                    "surface-bright": "#3a3939",
+                    "tertiary-container": "#e5e2e1",
+                    "inverse-surface": "#e5e2e1",
+                    "secondary-fixed-dim": "#38bdf8",
+                    "surface-tint": "#c6c6c7",
+                    "tertiary": "#ffffff",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "error-container": "#93000a",
+                    "on-surface": "#e5e2e1",
+                    "primary-fixed-dim": "#c6c6c7",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-primary": "#2f3131",
+                    "surface-dim": "#131313",
+                    "primary": "#ffffff",
+                    "on-secondary": "#001e2c",
+                    "inverse-on-surface": "#313030",
+                    "surface-container-highest": "#353534",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-container": "#201f1f",
+                    "on-primary-fixed-variant": "#454747",
+                    "secondary-container": "#38bdf8",
+                    "on-tertiary": "#313030",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "on-background": "#e5e2e1",
+                    "surface-container-low": "#1c1b1b",
+                    "secondary": "#38bdf8",
+                    "on-tertiary-container": "#656464",
+                    "outline": "#8e9192",
+                    "secondary-fixed": "#7bd0ff",
+                    "surface": "#131313",
+                    "primary-fixed": "#e2e2e2",
+                    "on-secondary-fixed-variant": "#004c69",
+                    "tertiary-fixed": "#e5e2e1",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "outline-variant": "#444748",
+                    "on-primary-container": "#636565",
+                    "on-secondary-container": "#001e2c",
+                    "on-error-container": "#ffdad6",
+                    "error": "#ffb4ab",
+                    "on-secondary-fixed": "#001e2c",
+                    "inverse-primary": "#5d5f5f",
+                    "on-surface-variant": "#c4c7c8",
+                    "background": "#131313"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "24px",
+                    "stack-xl": "120px",
+                    "gutter": "24px",
+                    "stack-sm": "8px",
+                    "margin-tablet": "40px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "80px",
+                    "stack-lg": "64px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Archivo Narrow"],
+                    "body-lg": ["Inter"],
+                    "display-lg-mobile": ["Archivo Narrow"],
+                    "headline-lg": ["Archivo Narrow"],
+                    "mono-label": ["Inter"],
+                    "headline-md": ["Archivo Narrow"],
+                    "body-md": ["Inter"],
+                    "label-caps": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["80px", {"lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "mono-label": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .grain-overlay {
+            pointer-events: none;
+            position: absolute;
+            inset: 0;
+            z-index: 10;
+            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+            opacity: 0.05;
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+            color: transparent;
+        }
+        .video-bg-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        .video-bg-container img {
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+        }
+        .milestone-dot {
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .milestone-dot:hover {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden selection:bg-secondary selection:text-on-secondary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-margin-desktop py-6 z-50 bg-background/80 backdrop-blur-md border-b border-white/10 transition-all duration-300" id="nav-shell">
+<div class="font-display-lg text-headline-md tracking-tighter text-primary">MAY THAZIN LEI</div>
+<div class="hidden md:flex gap-10 items-center">
+<a class="font-label-caps text-label-caps text-secondary border-b border-secondary pb-1" href="#work">Work</a>
+<a class="font-label-caps text-label-caps text-primary/60 hover:text-primary transition-colors duration-0" href="#about">About</a>
+<a class="font-label-caps text-label-caps text-primary/60 hover:text-primary transition-colors duration-0" href="#milestones">Milestones</a>
+<a class="font-label-caps text-label-caps text-primary/60 hover:text-primary transition-colors duration-0" href="#">Contact</a>
+</div>
+<button class="bg-secondary text-on-secondary px-6 py-2 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-colors duration-200">
+            Collaborate
+        </button>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-screen w-full flex flex-col justify-center items-center overflow-hidden">
+<div class="video-bg-container">
+<img class="w-full h-full object-cover" data-alt="A cinematic, low-angle shot of Burmese documentary filmmaker May Thazin Lei holding a professional camera in a bustling Southeast Asian market. The lighting is natural but high-contrast, with rays of sun filtering through stalls. The atmosphere is raw and documentary-style, reflecting her journalism roots." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP9heTFgyWGAC14SyBov4gUNzD8S-YG_1is89x6H0uhuZUZBripCB3AmQ6H5S9sNLRgZhvfSLj5JWVXXJVKlDlEKwYhFbLdEnV8vr9JfzoClAHFAOrzAi3K4Cp6MQA2-xShy5cP7RyAwAd5qE1j768Amq0We5PeAyK1Yw7AGVfukBDZoEORygVcDVfQvr287ckIo8zO4CYFETC4qREHoIMFfNTQksC4a19e1yV-1IanxEuISnXTVs_sNKJKllF7aPHrCZX6ybh6yhW"/>
+</div>
+<div class="grain-overlay"></div>
+<div class="z-20 flex flex-col items-center">
+<h1 class="font-display-lg text-[12vw] md:text-[180px] leading-none text-primary uppercase tracking-tighter mix-blend-difference flex flex-col items-center select-none">
+<span>TRUTH</span>
+<span class="text-stroke">VISION</span>
+</h1>
+<div class="mt-stack-md flex gap-4 items-center">
+<span class="w-12 h-[1px] bg-secondary"></span>
+<p class="font-mono-label text-label-caps text-primary/60 tracking-[0.2em] uppercase">Burmese Documentary Filmmaker &amp; Video Journalist</p>
+<span class="w-12 h-[1px] bg-secondary"></span>
+</div>
+</div>
+<div class="absolute bottom-10 animate-bounce">
+<span class="material-symbols-outlined text-primary/40 text-4xl">keyboard_double_arrow_down</span>
+</div>
+</header>
+<!-- About Section -->
+<section class="py-stack-xl px-margin-mobile md:px-margin-desktop bg-surface-container" id="about">
+<div class="max-w-4xl mx-auto">
+<h2 class="font-display-lg text-headline-lg uppercase text-primary mb-stack-md border-b border-white/10 pb-4">Profile</h2>
+<p class="font-body-lg text-body-lg text-primary/80 leading-relaxed mb-6">
+            May Thazin Lei is an award-winning filmmaker and journalist based in Myanmar. With a focus on the shifting political landscapes and social undercurrents of Southeast Asia, her lens captures the raw reality of marginalized voices.
+        </p>
+<p class="font-body-lg text-body-lg text-primary/80 leading-relaxed">
+            She has collaborated extensively with world-renowned media organizations including <span class="text-secondary font-bold">BBC Burmese</span>, <span class="text-secondary font-bold">DVB Multimedia Group</span>, and <span class="text-secondary font-bold">Mizzima Multimedia Group</span>. Her work is characterized by a brutalist cinematic aesthetic that refuses to turn away from the difficult truths of our time.
+        </p>
+</div>
+</section>
+<!-- Work Grid Section -->
+<section class="py-stack-xl px-margin-mobile md:px-margin-desktop" id="work">
+<div class="flex flex-col md:flex-row justify-between items-baseline mb-stack-lg border-b border-white/10 pb-6">
+<h2 class="font-display-lg text-headline-lg uppercase text-primary">Portfolio</h2>
+<div class="flex gap-8 mt-6 md:mt-0" id="filters">
+<button class="font-label-caps text-label-caps text-secondary tracking-widest group">
+                    [ALL]
+                    <div class="h-[1px] w-full bg-secondary scale-x-100 transition-transform origin-left"></div>
+</button>
+<button class="font-label-caps text-label-caps text-primary/40 tracking-widest hover:text-primary transition-colors duration-200 group">
+                    [DOCUMENTARY]
+                    <div class="h-[1px] w-full bg-secondary scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+</button>
+<button class="font-label-caps text-label-caps text-primary/40 tracking-widest hover:text-primary transition-colors duration-200 group">
+                    [JOURNALISM]
+                    <div class="h-[1px] w-full bg-secondary scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+</button>
+</div>
+</div>
+<!-- Bento Grid Portfolio -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Project Card 1: Queen of Trash -->
+<div class="group relative aspect-video overflow-hidden border border-white/20 bg-surface cursor-pointer lg:col-span-2">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="A striking frame from the film 'Queen of Trash' showing a woman standing amidst a vast landscape of refuse, silhouetted against a setting sun. The light is golden and harsh, creating a beautiful yet tragic image of environmental and social struggle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMp4b8MJhe1lfYZkQyKiCRC05bfMK0lyXdlH7A8SVFl_tc1FLqsCBH26YTnYGjWJ9HSLyRuu9RFgggmt2KD0Q62sr5BbqbBIsA6Yd5gcoYdYK1WhiIrCQK4Kuyjapb9BiFjNqXekQB3sF6VbJ_dXtjxSJHSHSPwPZENdl8I2MIchPb88rnTTN-0kdm1LqP0niyBc5CC4CVRNGPkzuZG-B1mfKYo6B3G1kWL5-XbUPrRoming7NEPQFCe5t-GNAOQyAtMukWjXBWHMk"/>
+<div class="grain-overlay"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="absolute bottom-6 left-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+<p class="font-label-caps text-label-caps text-secondary mb-1">FEATURE DOCUMENTARY</p>
+<h3 class="font-display-lg text-headline-md text-primary leading-tight">QUEEN OF TRASH</h3>
+<p class="font-mono-label text-[10px] text-primary/60 tracking-widest mt-2">© 2020 | 28 MINS</p>
+</div>
+</div>
+<!-- Project Card 2: The Last Day -->
+<div class="group relative aspect-video overflow-hidden border border-white/20 bg-surface cursor-pointer">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="A poignant close-up from 'The Last Day' showing an elderly man's weathered hands holding an old photograph. The lighting is soft and melancholic, focusing on the texture of the skin and the faded paper, representing the end of an era in a changing village." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7iLRzx5ypr2ga-N3FvVc116PL98msFPs_UJ4BdNtRwDjfRS75NxlpgjixBb-enq9l2xvaGdYY89ynG7Lb9TOsnpzYcGz6SO_WU260FXbSXlxdQ1FML0-kI-I-785wiT0l4Q4yR8eRaQr4W0tNkWUSk4uRySHdEHA4jjsZUuYGa57lP7svxmcbVX95ZtIm6UPPiGBBQkpMzm5RjaXrPs0EPOV1iQvIBDduquxmuJ2hxGXip7vgRmVg8uddJ6Zh_6K4o0PrTypevoYS"/>
+<div class="grain-overlay"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="absolute bottom-6 left-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+<p class="font-label-caps text-label-caps text-secondary mb-1">SHORT FILM</p>
+<h3 class="font-display-lg text-headline-md text-primary leading-tight">THE LAST DAY</h3>
+<p class="font-mono-label text-[10px] text-primary/60 tracking-widest mt-2">© 2018 | 15 MINS</p>
+</div>
+</div>
+<!-- Project Card 3: BBC Reportage -->
+<div class="group relative aspect-video overflow-hidden border border-white/20 bg-surface cursor-pointer">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="Journalistic footage of a peaceful march in Yangon, captured with high-contrast shadows and sharp details. The image feels immediate and vital, characteristic of May's work for BBC Burmese." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWUE-fI882ViS-fExnRvHbdBCyuIxCIK9vhZG0PkXkiWA3hSCv8iUwg4bgB-jqd8HUq68HYFC0eisf3K5MSPxp8zJfAa57Vepdym-Mko-p09zhk90sdJCfWJ42RSRjHJvwOfdkg7wAWvt9VIEYy50uVhgY6Lp8tRJR64tkWdjEnjrWrl2rF40LEaujnG7PYpfHGJIWSp4pkqTLx7Ldcleh3nXApWnYbYA0mA5X-Mk7vCnu37H-Syjr9fuWQTPFXdoqV5yKMN4fCcYE"/>
+<div class="grain-overlay"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="absolute bottom-6 left-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+<p class="font-label-caps text-label-caps text-secondary mb-1">JOURNALISM</p>
+<h3 class="font-display-lg text-headline-md text-primary leading-tight">BBC BURMESE: FRONTLINES</h3>
+<p class="font-mono-label text-[10px] text-primary/60 tracking-widest mt-2">© 2022 | VARIOUS</p>
+</div>
+</div>
+<!-- Project Card 4: DVB Multimedia -->
+<div class="group relative aspect-video overflow-hidden border border-white/20 bg-surface cursor-pointer">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="A portrait from a DVB special report showing a young student activist in thought. The lighting is dramatic and moody, reflecting the high-stakes environment of political journalism in Southeast Asia." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXEfTR9ryztdL1O_-8XE2alqfJYi8L9zeVD5J-X5kJTHp1dtVKn1H-PYbV9o0PhHGIhaC0Ib_kAZSp_c6z-b5npwrlobtdEyqo4eD5onnyGTQZ49PeqAYCZstmGBT0OHbjBh0d1_1hubowuzipmAlwcGohO6dOjDUOjtM52OO47Z58jGplSybZN3ac_w5LQuc2i1PzXgFtx5mBhFNGQ_zlIEzmI2NJgB8yBvoEMj659sXyXyr2bGxZ5LfhJ7JlStgxrStNpnhnZzC9"/>
+<div class="grain-overlay"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<div class="absolute bottom-6 left-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+<p class="font-label-caps text-label-caps text-secondary mb-1">JOURNALISM</p>
+<h3 class="font-display-lg text-headline-md text-primary leading-tight">DVB: UNDERGROUND</h3>
+<p class="font-mono-label text-[10px] text-primary/60 tracking-widest mt-2">© 2021 | 12 MINS</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Milestone Timeline -->
+<section class="py-stack-xl bg-surface-container-low/50 relative" id="milestones">
+<div class="px-margin-mobile md:px-margin-desktop mb-stack-lg">
+<h2 class="font-display-lg text-headline-lg uppercase text-primary border-b border-white/10 pb-6">Milestones</h2>
+</div>
+<div class="relative max-w-4xl mx-auto px-margin-mobile">
+<!-- Center Line -->
+<div class="absolute left-1/2 transform -translate-x-1/2 h-full w-[1px] bg-white/10"></div>
+<!-- Milestone 1 -->
+<div class="relative flex items-center justify-between mb-24 w-full">
+<div class="w-5/12 text-right pr-12 hidden md:block">
+<h4 class="font-display-lg text-headline-md text-primary">HUMAN RIGHTS WATCH FILM FESTIVAL</h4>
+<p class="font-label-caps text-label-caps text-secondary uppercase mb-2">Official Selection: Queen of Trash</p>
+</div>
+<div class="absolute left-1/2 transform -translate-x-1/2 z-20">
+<div class="milestone-dot w-4 h-4 bg-secondary rounded-full border-4 border-background outline outline-4 outline-secondary/20"></div>
+</div>
+<div class="w-full md:w-5/12 pl-12">
+<div class="md:hidden mb-2">
+<h4 class="font-display-lg text-headline-md text-primary">HRW FILM FESTIVAL</h4>
+<p class="font-label-caps text-label-caps text-secondary uppercase">Selection</p>
+</div>
+<span class="font-mono-label text-headline-lg text-primary/10 select-none">2020</span>
+</div>
+</div>
+<!-- Milestone 2 -->
+<div class="relative flex items-center justify-between mb-24 w-full">
+<div class="w-full md:w-5/12 text-right pr-12">
+<span class="font-mono-label text-headline-lg text-primary/10 select-none">2019</span>
+<div class="md:hidden mt-2">
+<h4 class="font-display-lg text-headline-md text-primary">BBC NEWS EXCELLENCE</h4>
+<p class="font-label-caps text-label-caps text-secondary uppercase">Special Merit for Reporting</p>
+</div>
+</div>
+<div class="absolute left-1/2 transform -translate-x-1/2 z-20">
+<div class="milestone-dot w-4 h-4 bg-secondary rounded-full border-4 border-background outline outline-4 outline-secondary/20"></div>
+</div>
+<div class="w-5/12 pl-12 hidden md:block">
+<h4 class="font-display-lg text-headline-md text-primary">BBC NEWS EXCELLENCE</h4>
+<p class="font-label-caps text-label-caps text-secondary uppercase mb-2">Social Impact Reporting</p>
+</div>
+</div>
+<!-- Milestone 3 -->
+<div class="relative flex items-center justify-between mb-12 w-full">
+<div class="w-5/12 text-right pr-12 hidden md:block">
+<h4 class="font-display-lg text-headline-md text-primary">MYANMAR ACADEMY AWARDS</h4>
+<p class="font-label-caps text-label-caps text-secondary uppercase mb-2">Best Short Documentary: The Last Day</p>
+</div>
+<div class="absolute left-1/2 transform -translate-x-1/2 z-20">
+<div class="milestone-dot w-4 h-4 bg-secondary rounded-full border-4 border-background outline outline-4 outline-secondary/20"></div>
+</div>
+<div class="w-full md:w-5/12 pl-12">
+<div class="md:hidden mb-2">
+<h4 class="font-display-lg text-headline-md text-primary">MYANMAR ACADEMY</h4>
+<p class="font-label-caps text-label-caps text-secondary uppercase">Winner</p>
+</div>
+<span class="font-mono-label text-headline-lg text-primary/10 select-none">2018</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full px-margin-desktop py-stack-xl flex flex-col items-start border-t border-white/20 bg-background">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-stack-lg leading-tight tracking-tighter">
+            TELLING THE<br/>STORY OF MYANMAR.
+        </h2>
+<div class="w-full flex flex-col md:flex-row justify-between items-start md:items-end gap-10">
+<div class="flex flex-col gap-4">
+<p class="font-mono-label text-label-caps text-primary/40 uppercase tracking-widest">Connect</p>
+<div class="flex flex-wrap gap-8">
+<a class="font-display-lg text-headline-md text-primary/40 hover:text-secondary hover:scale-105 transition-all duration-0" href="#">Instagram</a>
+<a class="font-display-lg text-headline-md text-primary/40 hover:text-secondary hover:scale-105 transition-all duration-0" href="#">Vimeo</a>
+<a class="font-display-lg text-headline-md text-primary/40 hover:text-secondary hover:scale-105 transition-all duration-0" href="#">LinkedIn</a>
+<a class="font-display-lg text-headline-md text-primary/40 hover:text-secondary hover:scale-105 transition-all duration-0" href="#">Email</a>
+</div>
+</div>
+<div class="text-right flex flex-col items-start md:items-end">
+<p class="font-label-caps text-label-caps text-primary/40 mb-2">BASED IN YANGON, MYANMAR</p>
+<p class="font-label-caps text-label-caps text-primary/40 uppercase tracking-widest">©2024 MAY THAZIN LEI. ALL RIGHTS RESERVED.</p>
+</div>
+</div>
+</footer>
+<!-- Custom Cursor Effect -->
+<div class="fixed w-8 h-8 border border-secondary rounded-full pointer-events-none z-[9999] opacity-0 transition-opacity duration-300 hidden md:block" id="cursor"></div>
+<script>
+        // Smooth Cursor Follow
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.opacity = '1';
+            cursor.style.left = e.clientX - 16 + 'px';
+            cursor.style.top = e.clientY - 16 + 'px';
+        });
+
+        // Hover Inversion logic
+        const interactiveElements = document.querySelectorAll('a, button, .cursor-pointer');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(2)';
+                cursor.style.backgroundColor = 'rgba(56, 189, 248, 0.2)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+                cursor.style.backgroundColor = 'transparent';
+            });
+        });
+
+        // Nav show/hide on scroll
+        let lastScrollTop = 0;
+        const nav = document.getElementById('nav-shell');
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                nav.style.transform = 'translateY(-100%)';
+            } else {
+                nav.style.transform = 'translateY(0)';
+            }
+            lastScrollTop = scrollTop;
+        });
+
+        // Simple Filter Logic (Visual only for prototype)
+        const filters = document.querySelectorAll('#filters button');
+        filters.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filters.forEach(b => {
+                    b.classList.remove('text-secondary');
+                    b.classList.add('text-primary/40');
+                    const underline = b.querySelector('div');
+                    if(underline) {
+                        underline.classList.remove('scale-x-100');
+                        underline.classList.add('scale-x-0');
+                    }
+                });
+                btn.classList.add('text-secondary');
+                btn.classList.remove('text-primary/40');
+                const underline = btn.querySelector('div');
+                if(underline) {
+                    underline.classList.add('scale-x-100');
+                    underline.classList.remove('scale-x-0');
+                }
+            });
+        });
+    </script>
+</body></html>

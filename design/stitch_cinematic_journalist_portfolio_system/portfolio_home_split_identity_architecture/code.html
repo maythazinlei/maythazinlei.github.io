@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>May Thazin Lei | Socio-Political Reporting &amp; Underground Cinema</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#e5e2e1",
+                        "surface-tint": "#c6c6c7",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "tertiary-fixed": "#e5e2e1",
+                        "secondary-fixed": "#ffdea8",
+                        "background": "#131313",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-tertiary": "#313030",
+                        "on-surface-variant": "#c4c7c8",
+                        "inverse-on-surface": "#313030",
+                        "outline-variant": "#444748",
+                        "surface-container": "#201f1f",
+                        "primary-container": "#e2e2e2",
+                        "surface": "#131313",
+                        "on-background": "#e5e2e1",
+                        "surface-container-low": "#1c1b1b",
+                        "surface-container-highest": "#353534",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-surface": "#e5e2e1",
+                        "inverse-surface": "#e5e2e1",
+                        "on-tertiary-container": "#656464",
+                        "tertiary": "#ffffff",
+                        "primary": "#ffffff",
+                        "surface-variant": "#353534",
+                        "on-secondary-fixed-variant": "#5e4200",
+                        "on-secondary": "#412d00",
+                        "on-primary-fixed-variant": "#454747",
+                        "on-primary-fixed": "#1a1c1c",
+                        "primary-fixed": "#e2e2e2",
+                        "on-primary": "#2f3131",
+                        "on-error": "#690005",
+                        "on-primary-container": "#636565",
+                        "surface-container-high": "#2a2a2a",
+                        "on-secondary-fixed": "#271900",
+                        "surface-bright": "#3a3939",
+                        "secondary": "#ffdb9d",
+                        "surface-dim": "#131313",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#5d5f5f",
+                        "error-container": "#93000a",
+                        "secondary-container": "#feb700",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary-fixed-dim": "#ffba20",
+                        "outline": "#8e9192",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-container": "#6b4b00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "stack-md": "24px",
+                        "margin-tablet": "40px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "stack-lg": "64px",
+                        "margin-desktop": "80px",
+                        "stack-xl": "120px",
+                        "section-gap": "80px",
+                        "base": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Archivo Narrow"],
+                        "headline-md": ["Archivo Narrow"],
+                        "display-lg-mobile": ["Archivo Narrow"],
+                        "mono-label": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-lg": ["Archivo Narrow"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["80px", {"lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "display-lg-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "mono-label": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .brutalist-border {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .hover-hard-swap:hover {
+            background-color: #feb700 !important;
+            color: #131313 !important;
+        }
+        .split-hero-side {
+            transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .split-hero-container:hover .split-hero-side {
+            width: 45%;
+        }
+        .split-hero-container .split-hero-side:hover {
+            width: 55%;
+        }
+        @media (max-width: 768px) {
+            .split-hero-container:hover .split-hero-side {
+                width: 100%;
+            }
+            .split-hero-container .split-hero-side:hover {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 z-50 w-full bg-surface/80 backdrop-blur-md border-b-2 border-outline-variant">
+<nav class="flex justify-between items-center w-full px-6 md:px-margin-desktop py-4 max-w-[1440px] mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tighter uppercase">
+                May Thazin Lei
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1" href="#work">Work</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#milestones">Milestones</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contact</a>
+<button class="bg-primary text-on-primary px-6 py-2 font-label-md text-label-md hover:bg-secondary-container hover:text-on-secondary-container transition-all duration-300">
+                    Hire Me
+                </button>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary">menu</span>
+</div>
+</nav>
+</header>
+<main>
+<!-- Dynamic Split Hero -->
+<section class="split-hero-container flex flex-col md:flex-row h-screen w-full pt-16 overflow-hidden">
+<!-- Left: Socio-Political Reporting -->
+<div class="split-hero-side relative w-full md:w-1/2 h-1/2 md:h-full group cursor-pointer border-r border-outline-variant/30">
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500 z-10"></div>
+<img alt="" class="absolute inset-0 w-full h-full object-cover grayscale" data-alt="A gritty, cinematic black and white close-up shot of a vintage film camera being used in a bustling Asian street market. The lighting is harsh and high-contrast, emphasizing the textures of the surroundings and the raw truth of investigative journalism. The mood is serious, urgent, and professional, reflecting a commitment to socio-political storytelling in a dark, brutalist aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOfz6RZVkNhd6E1eqy3OT_-EGThh4OiYhlXDPTJNUbRrUJq-FVWGLYRtycU3HjehQwkCEPxRFRA6kCnAuc71KVeC3E53F-U4IP2QEFJf2bx0jlalzf3Wn50ECwem7dg2fjBF9Klfrr-k4b-1ZjxbaNLGdw4RrE_CiGia99ZNZBC6m7R_6ffzekbjEGZJ7mVNsE0l5srvgijL4AptQ-FqMeXUX-dFsG_0FQ5lz9mISSvGhpU4vcalW085Mm8rr2sVyaDqkcHHd6Ju7f"/>
+<div class="absolute inset-0 z-20 flex flex-col justify-end p-8 md:p-16">
+<span class="font-label-caps text-label-caps text-secondary mb-2">SOCIO-POLITICAL REPORTING</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-4 leading-none">THE RAW<br/>TRUTH</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mb-8">Current work for BBC Burmese documenting shifting landscapes in Southeast Asia.</p>
+<button class="w-fit px-8 py-4 bg-secondary text-on-secondary font-label-caps text-label-caps uppercase brutalist-border hover-hard-swap transition-none">
+                        View News Features
+                    </button>
+</div>
+</div>
+<!-- Right: Underground Cinema -->
+<div class="split-hero-side relative w-full md:w-1/2 h-1/2 md:h-full group cursor-pointer">
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-all duration-500 z-10"></div>
+<img alt="" class="absolute inset-0 w-full h-full object-cover" data-alt="A high-contrast cinematic wide shot of a solitary figure walking through a neon-lit alleyway at night, captured in a deep, moody color palette of shadows and amber highlights. The visual style is inspired by indie underground cinema, featuring intentional grain and atmospheric depth. The lighting creates a mysterious and respected mood, perfectly aligned with professional filmmaking craft." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa4q-k4kaGGt9rsUBTnjMqEZfotxkT2ovgjle7Dc-sXBpZ0ye5JFBk6KlpVLeCADolIkZrr6tSQT6HWZF69w5mVseLfbsIA514jjD2FOk94jsGg2jYe6eY_X8peR10GiJaWBYsiAe-PjfDnvoEySgf53B-0HZ1gobvirptyvk75FZIv-qhRaH0WNQHOsRXoAjzEY9le4sErm5okczE80Q8o9pY4oQvN9IozqWncyChtpRVrQ7MGU0ucyfoRxA9uar28FroAj8uCUI5"/>
+<div class="absolute inset-0 z-20 flex flex-col justify-end p-8 md:p-16">
+<span class="font-label-caps text-label-caps text-secondary mb-2">UNDERGROUND CINEMA</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-4 leading-none">CRAFTED<br/>NARRATIVES</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mb-8">Award-winning short films that explore the intersections of identity and place.</p>
+<button class="w-fit px-8 py-4 border border-white text-white font-label-caps text-label-caps uppercase brutalist-border hover-hard-swap transition-none">
+                        View Filmography
+                    </button>
+</div>
+</div>
+</section>
+<!-- Trusted Media Grid (Logo Wall) -->
+<section class="py-12 bg-surface-container-lowest border-y border-outline-variant">
+<div class="max-w-[1440px] mx-auto px-6 md:px-margin-desktop">
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-8 text-center opacity-60">PUBLISHED &amp; RECOGNIZED BY</p>
+<div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-30 hover:opacity-100 transition-opacity duration-700">
+<span class="font-display-lg text-[32px] md:text-[48px] font-bold tracking-tighter text-white">BBC</span>
+<span class="font-display-lg text-[32px] md:text-[48px] font-bold tracking-tighter text-white">DVB</span>
+<span class="font-display-lg text-[32px] md:text-[48px] font-bold tracking-tighter text-white">MIZZIMA</span>
+<span class="font-display-lg text-[32px] md:text-[48px] font-bold tracking-tighter text-white">RFA</span>
+</div>
+</div>
+</section>
+<!-- Universal Media Grid -->
+<section class="py-section-gap max-w-[1440px] mx-auto px-6 md:px-margin-desktop" id="work">
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="font-label-caps text-label-caps text-secondary">PORTFOLIO</span>
+<h2 class="font-headline-lg text-headline-lg mt-2 uppercase">Selected Works</h2>
+</div>
+<div class="hidden md:block">
+<p class="font-mono-label text-mono-label text-on-surface-variant text-right">01 // PROJECTS GRID</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Project 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-video overflow-hidden brutalist-border relative mb-4 bg-surface-container-high">
+<img alt="" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="A striking 16:9 cinematic frame from a documentary film titled 'Queen of Trash', showing an elderly woman looking out over a vast industrial landscape at sunset. The lighting is warm and dramatic, casting long shadows. The image uses a cinematic brutalist style with high contrast between the dark foreground and the glowing sky, emphasizing a powerful, resilient human spirit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPztdX5dhCr9VtXiVvex7YCFXR3ohDIwX9CXaTdgACHo8FjrCi6Rwoj3pX9nMZu9TW3quvQRR3xee7RZ-VIVeEwvEejKbTz2zmp3C9P2jbN5qRuogPetGo1IQZPc2huWqIDfTZKrjDklOdFnKylKOm06M7W77PDxUH47d35q_TBKeHBtElsDL2HC1N6e4Ky1xv9nPqg0wUxzWbMEglHtRPJ8Ke7lBe3liq60ihUNPzEGeHB_O3uBbpl_yg7onfWCyytKN1yvH2FWtP"/>
+<div class="absolute top-4 right-4 bg-black/80 px-3 py-1 brutalist-border">
+<span class="font-label-caps text-[10px] text-white">AWARD WINNER</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md uppercase group-hover:text-secondary transition-colors">Queen of Trash</h3>
+<p class="font-mono-label text-mono-label text-on-surface-variant mt-1">Director / Cinematographer — Documentary Short</p>
+</div>
+<span class="font-mono-label text-mono-label text-on-surface-variant">2023</span>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-video overflow-hidden brutalist-border relative mb-4 bg-surface-container-high">
+<img alt="" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="A 16:9 cinematic shot of a deserted train station platform at dusk, with one flickering light illuminating a vintage suitcase left behind. The mood is melancholic and cinematic, with a color palette of deep blues and stark amber. The lighting is meticulously placed to create a high-contrast underground film look, reflecting the 'The Last Day' narrative theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0319uB3kRs_9YyICzERkJU2g5HviQXRcRsnlb5jccnkN3tJ2YFJoais1uQhHk0l7EPo9dLPz-zwQA6PzHTC7YiIdfGS8YfiHBRTwkTeFtqFRiryz3dk2jb3g98Nf8w9wH8HxewzzF1bfNHyS90egLw6L797eBnrQekDYO8SCJWamITMno5vuQC2hgIFjat6EWDcgI2Ltg5-Sfo262xc_z_b57yej7x9O0XZvXmmuCg1fs5cVz_XyN2rY1i8xn53O5D9Rf_2RrNDXi"/>
+<div class="absolute top-4 right-4 bg-black/80 px-3 py-1 brutalist-border">
+<span class="font-label-caps text-[10px] text-white">NOMINEE</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md uppercase group-hover:text-secondary transition-colors">The Last Day</h3>
+<p class="font-mono-label text-mono-label text-on-surface-variant mt-1">Director — Narrative Fiction</p>
+</div>
+<span class="font-mono-label text-mono-label text-on-surface-variant">2022</span>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-video overflow-hidden brutalist-border relative mb-4 bg-surface-container-high">
+<img alt="" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="A high-contrast journalistic photograph capturing a crowd of activists in a street protest, viewed from a low angle. The lighting is natural but intense, highlighting the determination on faces and the texture of banners. The style is raw, investigative, and broadsheet-inspired, using a monochrome palette with deep black shadows and bright highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx30KP7QzuR5rOArHsCqZKh2WsMFzRmE7G-Iomw3WXYPtRPD8NlwUbM_0XNjFknYsT6MCJM8PWpb--dVvFctPNf-c3mrZZ7-nV5Hg18P-uXU92tgj0HXEZAQCjgea529qbGgVxPCWFH70cdAMDSCNIGRAB6sm30Y_IM0JubBdlkv2sFkbmNrJcZOCX1HIXKgZmxABD97CUaePvKDckOwPySyXB9mHre6m6Fn-4EWfYSGxFKETy1z2YrHes80kd-q6h_a_3ABZbiQAx"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md uppercase group-hover:text-secondary transition-colors">Burmese Spring</h3>
+<p class="font-mono-label text-mono-label text-on-surface-variant mt-1">Lead Reporter — BBC Investigative Series</p>
+</div>
+<span class="font-mono-label text-mono-label text-on-surface-variant">2021</span>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="group cursor-pointer">
+<div class="aspect-video overflow-hidden brutalist-border relative mb-4 bg-surface-container-high">
+<img alt="" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="A wide, atmospheric landscape shot of a misty mountain range at dawn, where a thin line of lights from a remote village is visible. The lighting is soft and ethereal yet maintains the high contrast of a cinematic brutalist aesthetic. The mood is one of intrigue and discovery, fitting for a project titled 'Borderlands'." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzk0ICwSar1vuPfah1p7Y-5Ch2H_UfIHmPohRoFWcmMJPf0820Dy8AvWJAcrx_ZabjJXUSdXRAWngnBnII0neJJwpYRYfoMx87ViHoBZkcFLolhV8lfGsyh1lwrRVKZeAVASsOtLHdfFAwyx-kAggSu3J5kJotAZmOCLTFc5IvCWx-0yF3Y3oocVB75kSVIGOxw8pgs-c08QnF77y-kGIhCdwElmjvK4gKP3-tqet82HULUwlsRsIte34nQyCyie54115eVqCSOid9"/>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md uppercase group-hover:text-secondary transition-colors">Borderlands</h3>
+<p class="font-mono-label text-mono-label text-on-surface-variant mt-1">Director of Photography — Documentary Feature</p>
+</div>
+<span class="font-mono-label text-mono-label text-on-surface-variant">2020</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Integrated Timeline -->
+<section class="py-section-gap bg-surface-container-low border-y border-outline-variant" id="milestones">
+<div class="max-w-[1440px] mx-auto px-6 md:px-margin-desktop">
+<div class="mb-16">
+<span class="font-label-caps text-label-caps text-secondary">CAREER TRACK</span>
+<h2 class="font-headline-lg text-headline-lg mt-2 uppercase">Milestones</h2>
+</div>
+<div class="relative border-l border-outline-variant ml-4 md:ml-0 pl-10 md:pl-20 space-y-16">
+<!-- Milestone 1 -->
+<div class="relative">
+<div class="absolute -left-[45px] md:-left-[85px] top-0 w-4 h-4 bg-secondary brutalist-border"></div>
+<span class="font-mono-label text-mono-label text-secondary block mb-2">2023 — PRESENT</span>
+<h4 class="font-headline-md text-headline-md uppercase">Senior Multimedia Producer @ BBC Burmese</h4>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2 max-w-2xl">Leading investigative video journalism across the region, focusing on civil unrest and humanitarian narratives.</p>
+</div>
+<!-- Milestone 2 -->
+<div class="relative">
+<div class="absolute -left-[45px] md:-left-[85px] top-0 w-4 h-4 bg-white brutalist-border"></div>
+<span class="font-mono-label text-mono-label text-on-surface-variant block mb-2">2022</span>
+<h4 class="font-headline-md text-headline-md uppercase">Winner: Best Documentary Short</h4>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2 max-w-2xl">Awarded at the Southeast Asian Film Festival for 'The Last Day', highlighting displaced communities.</p>
+</div>
+<!-- Milestone 3 -->
+<div class="relative">
+<div class="absolute -left-[45px] md:-left-[85px] top-0 w-4 h-4 bg-white brutalist-border"></div>
+<span class="font-mono-label text-mono-label text-on-surface-variant block mb-2">2020 — 2021</span>
+<h4 class="font-headline-md text-headline-md uppercase">Video Journalist @ DVB (Democratic Voice of Burma)</h4>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2 max-w-2xl">On-the-ground reporting during the coup, delivering real-time visual news under high-pressure environments.</p>
+</div>
+<!-- Milestone 4 -->
+<div class="relative">
+<div class="absolute -left-[45px] md:-left-[85px] top-0 w-4 h-4 bg-white brutalist-border"></div>
+<span class="font-mono-label text-mono-label text-on-surface-variant block mb-2">2018 — 2019</span>
+<h4 class="font-headline-md text-headline-md uppercase">Independent Filmmaking Fellowship</h4>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2 max-w-2xl">Selected for the Cinema Underground residency to develop a unique visual language for Burmese cinema.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Block -->
+<section class="py-section-gap max-w-[1440px] mx-auto px-6 md:px-margin-desktop" id="contact">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+<div>
+<span class="font-label-caps text-label-caps text-secondary">GET IN TOUCH</span>
+<h2 class="font-headline-lg text-headline-lg mt-2 uppercase mb-8 leading-tight">Available for<br/>Commissions &amp;<br/>Collaborations</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-md">Currently based in Bangkok, operating globally for documentary, news, and narrative projects.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-4 group">
+<span class="material-symbols-outlined text-secondary">mail</span>
+<span class="font-body-lg text-body-lg group-hover:text-secondary transition-colors underline underline-offset-8 decoration-outline-variant">contact@maythazinlei.com</span>
+</div>
+<div class="flex items-center gap-4 group">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+<span class="font-body-lg text-body-lg">Bangkok, Thailand</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container p-8 md:p-12 brutalist-border">
+<form class="space-y-10">
+<div class="relative">
+<input class="peer w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant focus:border-secondary focus:ring-0 transition-colors p-0 pb-2" id="name" placeholder=" " type="text"/>
+<label class="absolute left-0 -top-6 font-mono-label text-mono-label text-on-surface-variant uppercase transition-all peer-placeholder-shown:top-0 peer-placeholder-shown:text-body-md peer-focus:-top-6 peer-focus:text-secondary" for="name">Full Name</label>
+</div>
+<div class="relative">
+<input class="peer w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant focus:border-secondary focus:ring-0 transition-colors p-0 pb-2" id="email" placeholder=" " type="email"/>
+<label class="absolute left-0 -top-6 font-mono-label text-mono-label text-on-surface-variant uppercase transition-all peer-placeholder-shown:top-0 peer-placeholder-shown:text-body-md peer-focus:-top-6 peer-focus:text-secondary" for="email">Email Address</label>
+</div>
+<div class="relative">
+<textarea class="peer w-full bg-transparent border-t-0 border-x-0 border-b border-outline-variant focus:border-secondary focus:ring-0 transition-colors p-0 pb-2 resize-none" id="message" placeholder=" " rows="4"></textarea>
+<label class="absolute left-0 -top-6 font-mono-label text-mono-label text-on-surface-variant uppercase transition-all peer-placeholder-shown:top-0 peer-placeholder-shown:text-body-md peer-focus:-top-6 peer-focus:text-secondary" for="message">Message / Project Details</label>
+</div>
+<button class="w-full bg-secondary text-on-secondary font-label-caps text-label-caps uppercase py-4 hover-hard-swap transition-none brutalist-border" type="submit">
+                            Send Inquiry
+                        </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t-2 border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-6 md:px-margin-desktop py-12 max-w-[1440px] mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-on-surface mb-8 md:mb-0">
+                May Thazin Lei
+            </div>
+<div class="flex gap-8 mb-8 md:mb-0">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary underline decoration-2 underline-offset-4 transition-all" href="#">Instagram</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary underline decoration-2 underline-offset-4 transition-all" href="#">Vimeo</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary underline decoration-2 underline-offset-4 transition-all" href="#">LinkedIn</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary underline decoration-2 underline-offset-4 transition-all" href="#">Email</a>
+</div>
+<div class="font-label-md text-label-md text-on-surface-variant">
+                © 2024 May Thazin Lei. All Rights Reserved.
+            </div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for scrolling
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+            }
+        });
+
+        // Form submission animation (placeholder)
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = 'MESSAGE SENT';
+            btn.classList.add('bg-primary', 'text-on-primary');
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.classList.remove('bg-primary', 'text-on-primary');
+                form.reset();
+            }, 3000);
+        });
+    </script>
+</body></html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#353534",
+                    "surface-dim": "#131313",
+                    "on-secondary-container": "#001e2c",
+                    "surface-tint": "#c6c6c7",
+                    "on-secondary-fixed": "#001e2c",
+                    "on-error": "#690005",
+                    "inverse-surface": "#e5e2e1",
+                    "error": "#ffb4ab",
+                    "on-surface": "#e5e2e1",
+                    "error-container": "#93000a",
+                    "primary-fixed": "#e2e2e2",
+                    "secondary": "#38bdf8",
+                    "on-primary": "#2f3131",
+                    "tertiary": "#ffffff",
+                    "tertiary-fixed": "#e5e2e1",
+                    "inverse-primary": "#5d5f5f",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "on-tertiary-container": "#656464",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-container": "#636565",
+                    "background": "#131313",
+                    "on-background": "#e5e2e1",
+                    "on-primary-fixed": "#1a1c1c",
+                    "inverse-on-surface": "#313030",
+                    "surface": "#131313",
+                    "outline-variant": "#444748",
+                    "surface-container-high": "#2a2a2a",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "secondary-fixed-dim": "#38bdf8",
+                    "primary": "#ffffff",
+                    "surface-container-low": "#1c1b1b",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-surface-variant": "#c4c7c8",
+                    "secondary-container": "#004c69",
+                    "surface-bright": "#3a3939",
+                    "primary-fixed-dim": "#c6c6c7",
+                    "on-tertiary": "#313030",
+                    "surface-container": "#201f1f",
+                    "secondary-fixed": "#c4e7ff",
+                    "on-secondary-fixed-variant": "#004c69",
+                    "on-secondary": "#00354a",
+                    "surface-container-highest": "#353534",
+                    "tertiary-container": "#e5e2e1",
+                    "primary-container": "#e2e2e2",
+                    "outline": "#8e9192",
+                    "on-primary-fixed-variant": "#454747"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "24px",
+                    "stack-lg": "64px",
+                    "margin-tablet": "40px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "80px",
+                    "stack-xl": "120px",
+                    "gutter": "24px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "mono-label": ["Inter"],
+                    "display-lg-mobile": ["Archivo Narrow"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Archivo Narrow"],
+                    "headline-lg": ["Archivo Narrow"],
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "display-lg": ["Archivo Narrow"]
+            },
+            "fontSize": {
+                    "mono-label": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "display-lg-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "display-lg": ["80px", {"lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .cinematic-overlay {
+            background: linear-gradient(to top, rgba(19,19,19,1) 0%, rgba(19,19,19,0) 50%);
+        }
+        .hover-invert:hover {
+            background-color: #38bdf8;
+            color: #00354a;
+        }
+        .progress-line {
+            height: 2px;
+            background: #38bdf8;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-secondary selection:text-on-secondary">
+<!-- Header (Shared Component: TopNavBar) -->
+<header class="fixed top-0 w-full bg-background dark:bg-background border-b border-white/20 flex justify-between items-center px-margin-desktop py-6 z-50">
+<div class="font-display-lg text-headline-md tracking-tighter text-primary dark:text-primary">RAW_TRUTH</div>
+<nav class="hidden md:flex gap-8">
+<a class="font-label-caps text-label-caps text-secondary border-b border-secondary pb-1" href="#">Work</a>
+<a class="font-label-caps text-label-caps text-primary/60 hover:text-primary transition-colors duration-0" href="#">Milestones</a>
+<a class="font-label-caps text-label-caps text-primary/60 hover:text-primary transition-colors duration-0" href="#">About</a>
+<a class="font-label-caps text-label-caps text-primary/60 hover:text-primary transition-colors duration-0" href="#">Contact</a>
+</nav>
+<button class="font-label-caps text-label-caps bg-secondary text-on-secondary px-6 py-2 hover:opacity-90 transition-opacity duration-0">Hire Me</button>
+</header>
+<main class="pt-0">
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex flex-col justify-end overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="The Last Signal Documentary Header" class="w-full h-full object-cover scale-105" data-alt="A wide cinematic landscape shot of a solitary, weathered radio tower standing against a vast, desolate desert during the golden hour. The sky is a gradient of deep indigo and amber, reflecting a gritty, documentary film aesthetic. The lighting is low-key and high-contrast, emphasizing the sharp, brutalist silhouettes of the metal structure. The atmosphere is melancholic and mysterious, with a sense of isolation and raw truth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM5_iLlG6DG9oEe5mwp982B0leCm_Z76aLFecYR_ii_6Zv2ay2vdPlVElMGg99AjpnLjd06DulvTVvQegNf9ee40ojfPd0_-H4o1SVrm6OtdI8wYdJ2tXFWDEOQBnDBqUYvHJVQD6N9vBhDX0k6mJQKLEKB238aAwtLz1xzHiPQ0uPGNXpQ6xCBdXJ86y0d8aNLQTq7Cbo0ekPrm_fPufHj0JymExjAkIFOidGLRx_V54NhlqQmeg7KCWwPBDGL82Jl1Vcc4UwClhb"/>
+<div class="absolute inset-0 bg-black/40"></div>
+<div class="absolute inset-0 cinematic-overlay"></div>
+</div>
+<div class="relative z-10 px-margin-desktop pb-stack-lg flex flex-col items-start gap-4">
+<span class="font-label-caps text-label-caps text-secondary tracking-[0.2em] uppercase">Documentary Feature / 2023</span>
+<h1 class="font-display-lg text-display-lg max-w-4xl">THE LAST SIGNAL</h1>
+<div class="flex items-center gap-6 mt-4">
+<button class="bg-secondary text-on-secondary px-10 py-4 font-label-caps text-label-caps flex items-center gap-2 hover:bg-white hover:text-black transition-colors duration-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                        WATCH TRAILER
+                    </button>
+<div class="w-48 h-[2px] bg-white/20 relative overflow-hidden">
+<div class="absolute top-0 left-0 h-full w-1/3 progress-line"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Project Detail Grid -->
+<section class="px-margin-desktop py-stack-xl grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Sidebar: Metadata -->
+<aside class="md:col-span-3 flex flex-col gap-10">
+<div class="border-t border-white/20 pt-6">
+<span class="font-label-caps text-label-caps text-primary/40 block mb-4">ROLE</span>
+<p class="font-headline-md text-headline-md text-primary">Director &amp; DP</p>
+</div>
+<div class="border-t border-white/20 pt-6">
+<span class="font-label-caps text-label-caps text-primary/40 block mb-4">YEAR</span>
+<p class="font-headline-md text-headline-md text-primary">2023</p>
+</div>
+<div class="border-t border-white/20 pt-6">
+<span class="font-label-caps text-label-caps text-primary/40 block mb-4">AWARDS</span>
+<ul class="flex flex-col gap-2">
+<li class="font-body-lg text-body-lg text-secondary">Sundance Selection</li>
+<li class="font-body-lg text-body-lg text-primary">Best Cinematography - IDFA</li>
+<li class="font-body-lg text-body-lg text-primary">Critics Choice Nominee</li>
+</ul>
+</div>
+<div class="border-t border-white/20 pt-6">
+<span class="font-label-caps text-label-caps text-primary/40 block mb-4">TOOLS</span>
+<p class="font-mono-label text-mono-label text-primary/60 uppercase">Arri Alexa Mini LF / Cooke Anamorphic</p>
+</div>
+</aside>
+<!-- Main Content: Editorial -->
+<div class="md:col-span-8 md:col-start-5 flex flex-col gap-stack-lg">
+<div class="flex flex-col gap-6">
+<h2 class="font-headline-lg text-headline-lg">SYNOPSIS</h2>
+<p class="font-body-lg text-body-lg text-on-surface/80 leading-relaxed max-w-2xl">
+                        Deep in the forgotten frequencies of the Cold War, a mysterious signal begins to broadcast again after forty years of silence. "The Last Signal" follows a group of independent investigators as they trek across the frozen tundras of Siberia and the arid plains of the American Southwest to uncover the origin of a transmission that shouldn't exist. 
+                    </p>
+<p class="font-body-lg text-body-lg text-on-surface/80 leading-relaxed max-w-2xl">
+                        Part investigative journalism, part cinematic meditation on the passage of time, this documentary explores the intersection of decaying technology and human obsession.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="aspect-[4/5] overflow-hidden bg-surface-container-high border border-white/10">
+<img alt="Behind the scenes Siberia" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="A gritty black and white behind-the-scenes photograph of a film crew in a snow-covered industrial wasteland in Siberia. The lead cinematographer is holding a large professional cinema camera, focused on a rusted radio dish. The lighting is harsh and atmospheric, with swirling snow and deep shadows. The overall style is brutalist and authentic, capturing the raw truth of independent documentary filmmaking." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3tWmkDOVfYxmSzbdSzT3FTKEAeO6V0-7XRprQlBN5Gs8kdxfGJbUaR2q1TesepLn8ZWIp1qjWzw91PqaHGiqR8o6jLihNNr0cTuwKR0IiQLOtzA4k0kuYFwyLutKIq694GvjyChaHw6pw5XGjgY7gVAzbTQFl9vjvVb5YiTCxY13fxagjKT7xVcsCR4VyX9FzCfNrYLkvgpbMp9yxyDOywXi5guGyqX60yWKjBhjd2zk0P68aYOHjpQ4597iZy6FP2PvlbKtaGr2a"/>
+</div>
+<div class="aspect-[4/5] overflow-hidden bg-surface-container-high border border-white/10">
+<img alt="The desert investigator" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="A cinematic medium shot of an elderly investigator wearing a worn-out heavy coat, standing in the middle of a vast desert plain. He is looking off-camera with a look of intense concentration, holding a vintage handheld signal receiver. The lighting is moody, with the low sun casting long, sharp shadows. The color palette is dominated by deep blacks and muted amber tones, reflecting a high-end cinematic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5zafIiFbRxkh_6eJbT2szXW9RB_mA4xnS6Iv7gimETi17_0YVX_HUV6mTpojTgtSeqaxJWlGzX50E4rclFozIA-LW9NLn17INsxkwWidA9RKzbXu_xCtXc5BV4ONT6tclsGepcldfVw55vK7Id4zW1bc6TIkA4VoB39CK2PyaJMMChRfZWNl4pENZivVfdREaUOc5LqoEKpbavKTrlhNsY8yqvNs4_ad29RwO6PJn1TCyhvE8QQoJVAH43ZzV46p5nusxbhkQ3P1K"/>
+</div>
+</div>
+<div class="flex flex-col gap-6">
+<h2 class="font-headline-lg text-headline-lg">THE PROCESS</h2>
+<p class="font-body-lg text-body-lg text-on-surface/80 leading-relaxed max-w-2xl">
+                        The production took place over 18 months, requiring a nimble two-person crew to navigate sensitive locations. Our visual approach was defined by long takes and naturalistic lighting, aiming to capture the 'haunted' quality of the signal's history without relying on traditional talking-head interviews.
+                    </p>
+<div class="border-l-4 border-secondary pl-8 py-4 my-4">
+<blockquote class="font-headline-md text-headline-md italic text-primary">
+                            "The truth isn't in what the signal says, but in why someone is still listening."
+                        </blockquote>
+</div>
+</div>
+</div>
+</section>
+<!-- Project Navigation -->
+<section class="border-t border-white/20 group cursor-pointer relative overflow-hidden h-64 flex items-center justify-center">
+<div class="absolute inset-0 bg-secondary translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></div>
+<div class="relative z-10 flex flex-col items-center gap-2">
+<span class="font-label-caps text-label-caps text-primary/40 group-hover:text-on-secondary/60">NEXT PROJECT</span>
+<h3 class="font-display-lg text-headline-lg md:text-display-lg group-hover:text-on-secondary">ECHOES OF THE VALE</h3>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="flex flex-col items-start w-full px-margin-desktop py-stack-xl bg-background dark:bg-background border-t border-white/20">
+<div class="w-full flex flex-col md:flex-row justify-between items-start gap-10">
+<div class="font-display-lg text-display-lg text-primary">RAW TRUTH FILMS</div>
+<nav class="flex flex-col gap-4">
+<a class="font-label-caps text-label-caps text-primary/40 hover:text-secondary hover:scale-105 transition-all duration-0 origin-left" href="#">Instagram</a>
+<a class="font-label-caps text-label-caps text-primary/40 hover:text-secondary hover:scale-105 transition-all duration-0 origin-left" href="#">Vimeo</a>
+<a class="font-label-caps text-label-caps text-primary/40 hover:text-secondary hover:scale-105 transition-all duration-0 origin-left" href="#">LinkedIn</a>
+<a class="font-label-caps text-label-caps text-primary/40 hover:text-secondary hover:scale-105 transition-all duration-0 origin-left" href="#">Email</a>
+</nav>
+</div>
+<div class="mt-stack-lg font-label-caps text-label-caps text-primary/20">
+            ©2024 RAW TRUTH FILMS. ALL RIGHTS RESERVED.
+        </div>
+</footer>
+<script>
+        // Micro-interactions for cinematic reveal
+        window.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section, aside div, p').forEach(el => {
+                el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+                observer.observe(el);
+            });
+        });
+    </script>
+</body></html>

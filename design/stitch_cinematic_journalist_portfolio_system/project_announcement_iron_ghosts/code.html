@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FILM/JOURNAL | IRON GHOSTS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#c4c7c8",
+                    "inverse-surface": "#e5e2e1",
+                    "on-secondary-fixed": "#271900",
+                    "on-primary": "#2f3131",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-tertiary": "#313030",
+                    "surface": "#131313",
+                    "on-surface": "#e5e2e1",
+                    "background": "#131313",
+                    "outline": "#8e9192",
+                    "surface-container-lowest": "#0e0e0e",
+                    "outline-variant": "#444748",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "inverse-on-surface": "#313030",
+                    "surface-container-low": "#1c1b1b",
+                    "surface-container": "#201f1f",
+                    "on-secondary": "#412d00",
+                    "on-primary-container": "#636565",
+                    "surface-variant": "#353534",
+                    "surface-dim": "#131313",
+                    "surface-tint": "#c6c6c7",
+                    "on-error-container": "#ffdad6",
+                    "secondary-container": "#feb700",
+                    "surface-container-high": "#2a2a2a",
+                    "on-primary-fixed-variant": "#454747",
+                    "primary-fixed-dim": "#c6c6c7",
+                    "surface-bright": "#3a3939",
+                    "secondary": "#ffdb9d",
+                    "on-primary-fixed": "#1a1c1c",
+                    "on-tertiary-container": "#656464",
+                    "on-secondary-fixed-variant": "#5e4200",
+                    "error-container": "#93000a",
+                    "tertiary-container": "#e5e2e1",
+                    "on-secondary-container": "#6b4b00",
+                    "on-background": "#e5e2e1",
+                    "primary-container": "#e2e2e2",
+                    "primary-fixed": "#e2e2e2",
+                    "tertiary-fixed": "#e5e2e1",
+                    "tertiary": "#ffffff",
+                    "surface-container-highest": "#353534",
+                    "on-error": "#690005",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "primary": "#ffffff",
+                    "inverse-primary": "#5d5f5f",
+                    "secondary-fixed-dim": "#ffba20",
+                    "secondary-fixed": "#ffdea8",
+                    "error": "#ffb4ab",
+                    "accent-blue": "#38bdf8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "stack-md": "24px",
+                    "stack-xl": "120px",
+                    "margin-tablet": "40px",
+                    "stack-lg": "64px",
+                    "margin-mobile": "20px",
+                    "stack-sm": "8px",
+                    "margin-desktop": "80px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Archivo Narrow"],
+                    "headline-lg": ["Archivo Narrow"],
+                    "mono-label": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "display-lg-mobile": ["Archivo Narrow"],
+                    "display-lg": ["Archivo Narrow"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "mono-label": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "display-lg-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-lg": ["80px", {"lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    vertical-align: middle
+    }
+.grainy-overlay {
+    position: relative
+    }
+.grainy-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBGRDACcjXeEeEyyNiESJWs-uUk8H6F26cuYAcbAiioSudSiE4oQM35wmVtrkP5Q57qT0YBXA5miCMAdtsX7JK0E1e1YsHRwLyvihg7frzwYsfBottAczJodWSa_2eSJRJRyQyItpEZFuiuM-wQdGbpky5yERr4l9h9UUN7foHZlgT2rGV0oGsOYs3BJoaRj7b0Myh8YhjYMNSjLwch3IQ6tXJXKoir1Hj8pdcXgz2Fa_4PzaFBIxfpS6sAgQYwde79nCdGC1ujd-Uc);
+    z-index: 10
+    }</style>
+</head>
+<body class="bg-background text-on-background font-body-md grainy-overlay min-h-screen selection:bg-accent-blue selection:text-background">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background dark:bg-background border-b border-white/20 flex justify-between items-center px-gutter py-4 w-full">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-primary dark:text-primary">FILM/JOURNAL</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant font-medium font-label-caps text-label-caps hover:bg-secondary hover:text-on-secondary transition-colors duration-0 px-2 py-1" href="#">Work</a>
+<a class="text-secondary-fixed-dim font-bold border-b-2 border-secondary-fixed-dim pb-1 font-label-caps text-label-caps" href="#">Milestones</a>
+<a class="text-on-surface-variant font-medium font-label-caps text-label-caps hover:bg-secondary hover:text-on-secondary transition-colors duration-0 px-2 py-1" href="#">About</a>
+<a class="text-on-surface-variant font-medium font-label-caps text-label-caps hover:bg-secondary hover:text-on-secondary transition-colors duration-0 px-2 py-1" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-6 py-2 font-bold uppercase hover:bg-accent-blue hover:text-background transition-colors duration-0">
+            Hire Me
+        </button>
+</nav>
+<main class="pt-24 min-h-screen flex flex-col md:flex-row">
+<!-- Hero Section - Left Column: Visual Anchor -->
+<section class="w-full md:w-[45%] h-[70vh] md:h-screen sticky top-0 bg-surface-container-lowest overflow-hidden border-r border-white/10">
+<img alt="Iron Ghosts Poster" class="w-full h-full object-cover grayscale brightness-75 transition-transform duration-1000 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1DHyeEKjxHxKia5iawhF4jbLqoUCIpAwNTBIa2N0a01-B9YtpZNDi6b8TJsqJ8TY5d8CHduTb3xSCdIFP_iVpKO8UTcnYTK7X9R-l4ZcZindRxrsB6-L1BF_gTKQp80W6dLUdgLW0GpTIL0JgLsnb6DlOcuVEz9L1Sor-UmpSpnZ6vfdi4q8MDAm1PY2Hrv1LNIIovv5qciNElBmMaIyXwfMdsAfASahFanZv5r3vi6r16L51SZjv9R3gR2B4k75kodvckzOf25EN"/>
+<!-- Visual Overlay for branding -->
+<div class="absolute bottom-12 left-12 border-l-2 border-accent-blue pl-4 py-2 bg-background/40 backdrop-blur-sm">
+<p class="font-mono-label text-mono-label text-accent-blue">PROJECT CODE: IG_2026</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">CINEMATIC JOURNALISM SERIES</p>
+</div>
+</section>
+<!-- Hero Section - Right Column: Content -->
+<section class="w-full md:w-[55%] px-gutter md:px-margin-desktop py-stack-xl flex flex-col justify-center">
+<div class="space-y-stack-sm mb-12">
+<p class="font-mono-label text-mono-label text-accent-blue tracking-widest font-bold">
+                    // STATUS: OFFICIALLY ANNOUNCED
+                </p>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">
+                    [ CATEGORY: INDIE SHORT FILM / UNDERGROUND ]
+                </p>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-4 text-white leading-tight">
+                IRON GHOSTS
+            </h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant mb-12 opacity-80">
+                Director / Video Journalist
+            </p>
+<div class="w-full h-px bg-white/20 mb-12"></div>
+<div class="max-w-2xl mb-12">
+<p class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+                    A visceral descent into the forgotten industrial skeletons of Southeast Asia. Part investigative journalism, part cinematic poem, <span class="text-white font-bold italic">Iron Ghosts</span> explores the human cost of abandoned progress through the eyes of those left behind in the rust.
+                </p>
+</div>
+<div class="w-full h-px bg-white/20 mb-12"></div>
+<div class="space-y-6 mb-16">
+<div class="flex items-start gap-4">
+<span class="font-mono-label text-mono-label text-accent-blue mt-1">Q1 2026</span>
+<div>
+<p class="font-body-md text-body-md text-white font-bold">Principal Photography</p>
+<span class="font-label-caps text-label-caps bg-white/10 text-white px-2 py-0.5 rounded-sm">DONE</span>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="font-mono-label text-mono-label text-on-surface-variant mt-1">Q2 2026</span>
+<div>
+<p class="font-body-md text-body-md text-on-surface-variant">Post-Production &amp; Sound Design</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="font-mono-label text-mono-label text-on-surface-variant mt-1">Q3 2026</span>
+<div>
+<p class="font-body-md text-body-md text-on-surface-variant">Festival Submission Circuit</p>
+</div>
+</div>
+</div>
+<a class="group inline-flex items-center gap-4 text-white hover:text-accent-blue transition-colors duration-300" href="#">
+<span class="font-label-caps text-label-caps font-bold text-lg tracking-widest border-b-2 border-white group-hover:border-accent-blue pb-1">
+                    VIEW OFFICIAL ANNOUNCEMENT POST
+                </span>
+<span class="material-symbols-outlined transition-transform group-hover:translate-x-2" data-icon="arrow_right_alt">arrow_right_alt</span>
+</a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background dark:bg-background border-t border-white/20 flex flex-col md:flex-row justify-between items-center px-gutter py-12 w-full">
+<div class="mb-8 md:mb-0">
+<div class="font-headline-md text-headline-md font-bold text-primary mb-2">FILM/JOURNAL</div>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 CINEMATIC BRUTALISM. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-0 uppercase tracking-widest" href="#">Instagram</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-0 uppercase tracking-widest" href="#">Vimeo</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-0 uppercase tracking-widest" href="#">LinkedIn</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary-fixed-dim transition-colors duration-0 uppercase tracking-widest" href="#">Email</a>
+</div>
+</footer>
+<script>
+        // Simple parallax effect for the visual anchor
+        window.addEventListener('scroll', () => {
+            const visual = document.querySelector('section img');
+            const scroll = window.pageYOffset;
+            if (visual) {
+                visual.style.transform = `scale(${1 + scroll * 0.0001}) translateY(${scroll * 0.05}px)`;
+            }
+        });
+    </script>
+</body></html>

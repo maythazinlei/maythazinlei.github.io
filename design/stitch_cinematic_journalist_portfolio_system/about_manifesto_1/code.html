@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&amp;family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#353534",
+                        "surface-dim": "#131313",
+                        "on-secondary-container": "#6b4b00",
+                        "surface-tint": "#c6c6c7",
+                        "on-secondary-fixed": "#271900",
+                        "on-error": "#690005",
+                        "inverse-surface": "#e5e2e1",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e5e2e1",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#e2e2e2",
+                        "secondary": "#ffdb9d",
+                        "on-primary": "#2f3131",
+                        "tertiary": "#ffffff",
+                        "tertiary-fixed": "#e5e2e1",
+                        "inverse-primary": "#5d5f5f",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-tertiary-container": "#656464",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-container": "#636565",
+                        "background": "#131313",
+                        "on-background": "#e5e2e1",
+                        "on-primary-fixed": "#1a1c1c",
+                        "inverse-on-surface": "#313030",
+                        "surface": "#131313",
+                        "outline-variant": "#444748",
+                        "surface-container-high": "#2a2a2a",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "secondary-fixed-dim": "#ffba20",
+                        "primary": "#ffffff",
+                        "surface-container-low": "#1c1b1b",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-surface-variant": "#c4c7c8",
+                        "secondary-container": "#feb700",
+                        "surface-bright": "#3a3939",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-tertiary": "#313030",
+                        "surface-container": "#201f1f",
+                        "secondary-fixed": "#ffdea8",
+                        "on-secondary-fixed-variant": "#5e4200",
+                        "on-secondary": "#412d00",
+                        "surface-container-highest": "#353534",
+                        "tertiary-container": "#e5e2e1",
+                        "primary-container": "#e2e2e2",
+                        "outline": "#8e9192",
+                        "on-primary-fixed-variant": "#454747"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "24px",
+                        "stack-lg": "64px",
+                        "margin-tablet": "40px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "80px",
+                        "stack-xl": "120px",
+                        "gutter": "24px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "mono-label": ["Inter"],
+                        "display-lg-mobile": ["Archivo Narrow"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Archivo Narrow"],
+                        "headline-lg": ["Archivo Narrow"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "display-lg": ["Archivo Narrow"]
+                    },
+                    "fontSize": {
+                        "mono-label": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "display-lg-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "display-lg": ["80px", {"lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #131313; }
+        ::-webkit-scrollbar-thumb { background: #feb700; }
+        
+        .cinematic-grid {
+            background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 80px 80px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden cinematic-grid">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full bg-background dark:bg-background flex justify-between items-center px-margin-desktop py-6 z-50 border-b border-white/20">
+<div class="font-display-lg text-headline-md tracking-tighter text-primary dark:text-primary">RAW_TRUTH</div>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="font-label-caps text-label-caps text-primary/60 hover:text-primary transition-colors duration-0" href="#">Work</a>
+<a class="font-label-caps text-label-caps text-primary/60 hover:text-primary transition-colors duration-0" href="#">Milestones</a>
+<a class="font-label-caps text-label-caps text-secondary border-b border-secondary pb-1" href="#">About</a>
+<a class="font-label-caps text-label-caps text-primary/60 hover:text-primary transition-colors duration-0" href="#">Contact</a>
+<button class="ml-4 px-6 py-2 bg-secondary text-on-secondary font-label-caps text-label-caps hover:bg-on-secondary hover:text-secondary transition-colors duration-0">Hire Me</button>
+</div>
+</nav>
+<main class="pt-32 pb-stack-xl max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Manifesto Header -->
+<section class="mb-stack-xl border-l-2 border-secondary pl-8 md:pl-12">
+<p class="font-label-caps text-label-caps text-secondary mb-4">MANIFESTO 01.0</p>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary max-w-4xl mb-stack-md leading-none">
+                OBSERVE WITHOUT INTERFERENCE. <br/>
+                RECORD WITHOUT PREJUDICE.
+            </h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl text-xl leading-relaxed">
+                Journalism is not just a report; it is a cinematic immersion into the human condition. We strip away the artifice of high-production polish to reveal the raw, uncomfortable texture of reality. The lens is a witness, not a director.
+            </p>
+</section>
+<!-- Biography Section: Asymmetric Editorial Layout -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-stack-xl items-start">
+<div class="md:col-span-5 relative group overflow-hidden border border-white/20">
+<img alt="Cinematic Journalist Portrait" class="w-full grayscale contrast-125 transition-transform duration-700 group-hover:scale-105" data-alt="A high-contrast black and white portrait of a filmmaker looking intensely into the distance. The lighting is dramatic and moody, utilizing deep shadows and stark highlights to emphasize a raw and gritty aesthetic. The subject's expression is serious and professional, set against a blurred background of a dark studio environment. The entire image exudes a sense of authoritative investigative journalism and cinematic intensity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAneivEi2pGDsj1o_bqbCRbui-XF8UqSVCNCSJZm179H2alUaC6n3od40ahJxk2g1T-UMdKGQxZt5G8JFdVPh1e0m8DY5h5HnozVrIQjCY1j2x8qPjODK7b7dU0DdN32i-AQxtVO3lVLCKyfdSo3NYus7bNPJazbFgfjkpFD2lL9OrHEtoT7UiyPsz956b5usmamnkBnKUVZp7mZd0sSBjH8N36-b7Pww1ph3p0u4Nxfk2zznU_HXz7kFIMhmaTGT-h6FyG12QIV5oN"/>
+<div class="absolute bottom-0 left-0 p-6 bg-background/80 backdrop-blur-sm border-t border-r border-white/20">
+<span class="font-label-caps text-label-caps text-secondary">EST. 2012</span>
+</div>
+</div>
+<div class="md:col-span-7 flex flex-col justify-center pt-8 md:pt-0">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-stack-md">THE VISIONARY <br/>BEHIND THE LENS</h2>
+<div class="space-y-6 text-on-surface-variant font-body-md leading-loose border-t border-white/10 pt-6">
+<p>
+                        With over a decade of experience in conflict zones and forgotten landscapes, my work bridges the gap between investigative journalism and indie filmmaking. I believe that every story has a visual pulse—a rhythm that dictates how it must be told. 
+                    </p>
+<p>
+                        I don't seek the perfect shot; I seek the honest one. Whether documenting the fallout of industrial decay or the quiet resilience of a community in crisis, my goal remains constant: to provide a platform for the voices that are often silenced by the noise of the mainstream.
+                    </p>
+<div class="grid grid-cols-2 gap-4 pt-6">
+<div class="p-4 border border-white/10">
+<span class="font-label-caps text-label-caps text-secondary block mb-2">AWARDS</span>
+<span class="font-body-md text-primary">7x International Doc Festival Winner</span>
+</div>
+<div class="p-4 border border-white/10">
+<span class="font-label-caps text-label-caps text-secondary block mb-2">FOCUS</span>
+<span class="font-body-md text-primary">Geopolitical Fragility &amp; Human Rights</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Toolkit: Industrial Bento Grid -->
+<section class="mb-stack-xl">
+<div class="flex justify-between items-end mb-8 border-b border-white/20 pb-4">
+<h3 class="font-headline-md text-headline-md text-primary">TECHNICAL TOOLKIT</h3>
+<span class="font-mono-label text-mono-label text-secondary">GEAR_LIST_VER_4.2</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Tool 1 -->
+<div class="p-8 border border-white/10 hover:bg-secondary hover:text-on-secondary transition-all duration-0 group">
+<span class="material-symbols-outlined text-4xl mb-4 group-hover:text-on-secondary" data-icon="videocam">videocam</span>
+<h4 class="font-label-caps text-label-caps mb-2">CAPTURE</h4>
+<p class="font-body-md text-on-surface-variant group-hover:text-on-secondary/80">RED V-RAPTOR 8K <br/>ARRI ALEXA MINI</p>
+</div>
+<!-- Tool 2 -->
+<div class="p-8 border border-white/10 hover:bg-secondary hover:text-on-secondary transition-all duration-0 group">
+<span class="material-symbols-outlined text-4xl mb-4 group-hover:text-on-secondary" data-icon="lens">lens</span>
+<h4 class="font-label-caps text-label-caps mb-2">OPTICS</h4>
+<p class="font-body-md text-on-surface-variant group-hover:text-on-secondary/80">ZEISS SUPREME PRIMES <br/>LEICA M MOUNT</p>
+</div>
+<!-- Tool 3 -->
+<div class="p-8 border border-white/10 hover:bg-secondary hover:text-on-secondary transition-all duration-0 group">
+<span class="material-symbols-outlined text-4xl mb-4 group-hover:text-on-secondary" data-icon="settings_input_component">settings_input_component</span>
+<h4 class="font-label-caps text-label-caps mb-2">AUDIO</h4>
+<p class="font-body-md text-on-surface-variant group-hover:text-on-secondary/80">SENNHEISER MKH 416 <br/>ZOOM F8N PRO</p>
+</div>
+<!-- Tool 4 -->
+<div class="p-8 border border-white/10 hover:bg-secondary hover:text-on-secondary transition-all duration-0 group">
+<span class="material-symbols-outlined text-4xl mb-4 group-hover:text-on-secondary" data-icon="bolt">bolt</span>
+<h4 class="font-label-caps text-label-caps mb-2">STABILIZATION</h4>
+<p class="font-body-md text-on-surface-variant group-hover:text-on-secondary/80">DJI RS3 PRO <br/>EASYRIG Vario 5</p>
+</div>
+</div>
+</section>
+<!-- Recognition List -->
+<section class="max-w-4xl">
+<h3 class="font-label-caps text-label-caps text-secondary mb-8">SELECTED EXHIBITIONS &amp; SCREENINGS</h3>
+<div class="space-y-0">
+<div class="flex justify-between items-center py-6 border-t border-white/10 hover:bg-white/5 px-4 transition-colors">
+<span class="font-body-lg text-primary">Sundance Film Festival</span>
+<span class="font-mono-label text-on-surface-variant">2023 / Official Selection</span>
+</div>
+<div class="flex justify-between items-center py-6 border-t border-white/10 hover:bg-white/5 px-4 transition-colors">
+<span class="font-body-lg text-primary">Berlin International Film Festival</span>
+<span class="font-mono-label text-on-surface-variant">2022 / Golden Bear Nominee</span>
+</div>
+<div class="flex justify-between items-center py-6 border-t border-white/10 hover:bg-white/5 px-4 transition-colors">
+<span class="font-body-lg text-primary">The New York Times</span>
+<span class="font-mono-label text-on-surface-variant">2021 / Visual Journalism Award</span>
+</div>
+<div class="flex justify-between items-center py-6 border-t border-b border-white/10 hover:bg-white/5 px-4 transition-colors">
+<span class="font-body-lg text-primary">Vimeo Staff Pick</span>
+<span class="font-mono-label text-on-surface-variant">2020 / Best of the Year</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full px-margin-desktop py-stack-xl bg-background border-t border-white/20 flex flex-col items-start">
+<div class="font-display-lg text-display-lg text-primary mb-12">RAW_TRUTH</div>
+<div class="w-full flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="flex flex-col gap-4">
+<a class="font-display-lg text-headline-md text-primary/40 hover:text-secondary transition-colors duration-0 transform hover:scale-105 origin-left" href="#">Instagram</a>
+<a class="font-display-lg text-headline-md text-primary/40 hover:text-secondary transition-colors duration-0 transform hover:scale-105 origin-left" href="#">Vimeo</a>
+<a class="font-display-lg text-headline-md text-primary/40 hover:text-secondary transition-colors duration-0 transform hover:scale-105 origin-left" href="#">LinkedIn</a>
+<a class="font-display-lg text-headline-md text-primary/40 hover:text-secondary transition-colors duration-0 transform hover:scale-105 origin-left" href="#">Email</a>
+</div>
+<div class="max-w-md">
+<p class="font-label-caps text-label-caps text-primary/40 mb-4">LATEST UPDATE</p>
+<p class="font-body-md text-primary mb-8">Currently documenting the shifting landscapes of the Arctic Circle. Limited availability for commercial commissions through Q4 2024.</p>
+<div class="font-label-caps text-label-caps text-secondary">©2024 RAW TRUTH FILMS. ALL RIGHTS RESERVED.</div>
+</div>
+</div>
+</footer>
+<!-- Micro-Interaction Scripts -->
+<script>
+        // Smooth hover effect for list items
+        document.querySelectorAll('.border-t.hover\\:bg-white\\/5').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.paddingLeft = '32px';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.style.paddingLeft = '16px';
+            });
+        });
+
+        // Simple Parallax for the portrait
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const portrait = document.querySelector('img[data-alt*="portrait"]');
+            if(portrait) {
+                portrait.style.transform = `translateY(${scrolled * 0.05}px) scale(1.05)`;
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-variant": "#353535",
+                      "surface": "#131313",
+                      "on-secondary-container": "#b4b5b5",
+                      "tertiary-fixed-dim": "#ffb960",
+                      "on-surface-variant": "#bdc8d1",
+                      "inverse-primary": "#00668a",
+                      "primary-fixed-dim": "#7bd0ff",
+                      "on-primary-container": "#004965",
+                      "surface-container-lowest": "#0e0e0e",
+                      "on-tertiary": "#472a00",
+                      "surface-bright": "#393939",
+                      "on-error": "#690005",
+                      "outline-variant": "#3e484f",
+                      "surface-dim": "#131313",
+                      "outline": "#87929a",
+                      "surface-container-highest": "#353535",
+                      "tertiary-container": "#f1a02b",
+                      "on-primary-fixed-variant": "#004c69",
+                      "secondary-container": "#454747",
+                      "secondary": "#c6c6c7",
+                      "on-tertiary-fixed": "#2a1700",
+                      "primary-fixed": "#c4e7ff",
+                      "primary": "#8ed5ff",
+                      "on-secondary": "#2f3131",
+                      "tertiary-fixed": "#ffddb8",
+                      "on-surface": "#e4e2e1",
+                      "on-secondary-fixed-variant": "#454747",
+                      "error": "#ffb4ab",
+                      "primary-container": "#38bdf8",
+                      "on-primary": "#00354a",
+                      "error-container": "#93000a",
+                      "tertiary": "#ffc176",
+                      "on-primary-fixed": "#001e2c",
+                      "surface-container-low": "#1b1c1c",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "on-tertiary-container": "#613b00",
+                      "secondary-fixed": "#e2e2e2",
+                      "surface-container-high": "#2a2a2a",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "surface-tint": "#7bd0ff",
+                      "inverse-surface": "#e4e2e1",
+                      "inverse-on-surface": "#303030",
+                      "secondary-fixed-dim": "#c6c6c7",
+                      "background": "#131313",
+                      "surface-container": "#1f2020",
+                      "on-error-container": "#ffdad6",
+                      "on-background": "#e4e2e1"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "section-gap": "128px",
+                      "margin-mobile": "16px",
+                      "gutter": "24px",
+                      "margin-desktop": "64px"
+              },
+              "fontFamily": {
+                      "label-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-md": ["Playfair Display"],
+                      "body-md": ["Inter"],
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "headline-lg": ["Playfair Display"],
+                      "display-lg": ["Playfair Display"],
+                      "metadata-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "label-md": ["14px", {"lineHeight": "1", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "metadata-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e4e2e1;
+        }
+        .cinematic-mask {
+            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav-link {
+            position: relative;
+        }
+        .active-nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #8ed5ff;
+        }
+    </style>
+</head>
+<body class="selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-surface border-b-2 border-outline-variant dark:border-outline-variant fixed top-0 w-full z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-base max-w-[1440px] mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tighter uppercase">May Thazin Lei</div>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1" href="#">Work</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Milestones</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+<button class="ml-4 px-6 py-2 border-2 border-primary text-primary font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all duration-300">
+                    Hire Me
+                </button>
+</div>
+<!-- Mobile Menu Trigger -->
+<div class="md:hidden">
+<span class="material-symbols-outlined text-on-surface">menu</span>
+</div>
+</div>
+</nav>
+<main class="mt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex flex-col justify-center px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto overflow-hidden">
+<div class="z-10 max-w-4xl">
+<span class="font-metadata-sm text-metadata-sm text-primary uppercase tracking-[0.2em] block mb-4">Video Journalist &amp; Documentary Filmmaker</span>
+<h1 class="font-display-lg text-display-lg md:text-[120px] leading-[0.9] mb-8">MAY THAZIN LEI</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12 border-l-2 border-primary pl-6">
+                    Producing documentary features for BBC Burmese. Specializing in socio-political reporting, human rights advocacy, and independent narrative storytelling across Southeast Asia.
+                </p>
+<div class="flex flex-col md:flex-row gap-gutter">
+<a class="group flex items-center gap-4 px-8 py-4 border-2 border-primary text-primary font-label-md text-label-md hover:bg-primary hover:text-on-primary transition-all duration-300" href="#journalism">
+                        Explore Journalism
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<a class="group flex items-center gap-4 px-8 py-4 border-2 border-outline text-on-surface font-label-md text-label-md hover:border-primary hover:text-primary transition-all duration-300" href="#film">
+                        Explore Independent Film
+                    </a>
+</div>
+</div>
+<!-- Background Visual Decor -->
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-20 pointer-events-none hidden md:block">
+<img class="w-full h-full object-cover cinematic-mask" data-alt="A moody, high-contrast cinematic shot of a professional film camera on a tripod, silhouetted against a dimly lit Southeast Asian cityscape at dusk. The lighting is low-key with deep shadows and subtle blue light accents highlighting the technical curves of the lens. The overall aesthetic is archival and investigative, reflecting a documentary filmmaking atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgXHcrGXBwbN4rLWEQMRRFkkE9njp9GxQxjGogmZREOA0OLhZc1IiYSG2f1p3byU6NpcHOyDKDfwrC_fzSwNg8i72VnioYGIDNkQAUGQDZ1Cw7jIgQpvKurpzLOgMFp2RnfBXDOIBzJ1K76qYbW0Rb9eF7LGsBObYyCQcxJcalQ7dvgshkGTWT3NnhZCscsSJK9E2UaBnwv4uiowvQyNw1ea85xxYAcRLrbNGi0fis4fY-5rfONm6NCZBdGGJMUOdLBdNgy-dqyt1z"/>
+</div>
+</section>
+<!-- Journalism Portfolio -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto" id="journalism">
+<div class="flex justify-between items-end mb-16">
+<div>
+<span class="font-metadata-sm text-metadata-sm text-primary uppercase tracking-[0.2em] block mb-2">Portfolio I</span>
+<h2 class="font-headline-lg text-headline-lg">Journalism &amp; Reporting</h2>
+</div>
+<div class="hidden md:flex gap-4 items-center font-metadata-sm text-metadata-sm opacity-50">
+<span>BBC BURMESE</span>
+<span class="w-[1px] h-4 bg-outline"></span>
+<span>DVB</span>
+<span class="w-[1px] h-4 bg-outline"></span>
+<span>MIZZIMA</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Large Feature Card -->
+<div class="md:col-span-8 group cursor-pointer">
+<div class="relative aspect-video overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="A gritty, wide-angle journalistic photograph of a bustling market in Myanmar under harsh, high-contrast midday sun. The image captures the raw energy of socio-political reality with deep blacks and sharp highlights. The composition is structured and architectural, leaning into the cinematic brutalist style with a focus on human rights advocacy storytelling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkVmv2W-sdC5Fh-4EFaPU-19oQFUx_V1LAQAV4vZjbPzmQfCxJ42olqoQQdvaSb9aiElTne-H2eKryZsdn0fYu9SwntProWEkg6-C2GZ-LCcMcpI3q6cD4ztuUe1au8hlzBWh_DOy3-3FoT0ANJwaV75vjcHCcrwNOgK1QKyPxISKVCExw2QCnE5GGA0qCSq65v9YoY8kylCMHjNVlFgrSTcJL70wUkM-9YjdsQKnM1M7ILs-HlOCPyCxlH9IGjeNcfvkPMMKdd0rs"/>
+<div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/80 to-transparent">
+<span class="font-metadata-sm text-metadata-sm text-primary uppercase mb-2 block">Featured Report • BBC Burmese</span>
+<h3 class="font-headline-md text-headline-md mb-4">Navigating the Shadows: Reporting from the Frontlines</h3>
+<div class="flex items-center gap-4 text-primary font-label-md">
+<span class="material-symbols-outlined">play_circle</span>
+<span class="underline decoration-2 underline-offset-8">Watch Investigation</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Cards -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<div class="border border-outline-variant p-6 hover:bg-surface-container transition-colors group cursor-pointer">
+<span class="font-metadata-sm text-metadata-sm text-on-surface-variant uppercase mb-4 block">Mizzima News</span>
+<h4 class="font-body-lg text-body-lg font-bold mb-2 group-hover:text-primary transition-colors">Economic Disparity in Yangon</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">A deep dive into the widening gap and the voices of the local laborers.</p>
+<span class="font-label-md text-label-md border-b-2 border-primary pb-1">Read Report</span>
+</div>
+<div class="border border-outline-variant p-6 hover:bg-surface-container transition-colors group cursor-pointer">
+<span class="font-metadata-sm text-metadata-sm text-on-surface-variant uppercase mb-4 block">DVB Multimedia</span>
+<h4 class="font-body-lg text-body-lg font-bold mb-2 group-hover:text-primary transition-colors">The Digital Resistance</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">How young activists are utilizing encrypted networks for advocacy.</p>
+<span class="font-label-md text-label-md border-b-2 border-primary pb-1">Watch Documentary</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Integrated Timeline -->
+<section class="bg-surface-container-lowest py-section-gap border-y-2 border-outline-variant">
+<div class="px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
+<div class="mb-16 text-center">
+<h2 class="font-headline-lg text-headline-lg mb-4">Professional Milestones</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">A chronicled journey of journalistic impact and cinematic achievements across a decade of storytelling.</p>
+</div>
+<div class="relative">
+<!-- Timeline Line -->
+<div class="absolute left-1/2 -translate-x-1/2 w-[2px] h-full bg-outline-variant hidden md:block"></div>
+<div class="space-y-16">
+<!-- Event 1 -->
+<div class="flex flex-col md:flex-row items-center gap-base md:gap-0">
+<div class="md:w-1/2 md:pr-12 text-right hidden md:block">
+<span class="font-metadata-sm text-metadata-sm text-primary uppercase">2023 - Present</span>
+<h3 class="font-headline-md text-headline-md mt-2">BBC Burmese Correspondent</h3>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface border-4 border-primary z-10 flex items-center justify-center">
+<div class="w-2 h-2 bg-primary rounded-full"></div>
+</div>
+<div class="md:w-1/2 md:pl-12">
+<div class="md:hidden text-center mb-4">
+<span class="font-metadata-sm text-metadata-sm text-primary uppercase">2023 - Present</span>
+<h3 class="font-headline-md text-headline-md mt-2">BBC Burmese Correspondent</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant bg-surface p-6 border border-outline-variant">Lead investigative reporter for regional documentary features, focusing on human rights violations and displacement in Southeast Asia.</p>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="flex flex-col md:flex-row-reverse items-center gap-base md:gap-0">
+<div class="md:w-1/2 md:pl-12 text-left hidden md:block">
+<span class="font-metadata-sm text-metadata-sm text-primary uppercase">2021</span>
+<h3 class="font-headline-md text-headline-md mt-2">Queen of Trash • Award</h3>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface border-4 border-outline z-10 flex items-center justify-center">
+<div class="w-2 h-2 bg-outline rounded-full"></div>
+</div>
+<div class="md:w-1/2 md:pr-12 md:text-right">
+<div class="md:hidden text-center mb-4">
+<span class="font-metadata-sm text-metadata-sm text-primary uppercase">2021</span>
+<h3 class="font-headline-md text-headline-md mt-2">Queen of Trash • Award</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant bg-surface p-6 border border-outline-variant">Recipient of the Southeast Asian Short Film Award for 'Queen of Trash', documenting the life of a waste picker in Yangon.</p>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="flex flex-col md:flex-row items-center gap-base md:gap-0">
+<div class="md:w-1/2 md:pr-12 text-right hidden md:block">
+<span class="font-metadata-sm text-metadata-sm text-primary uppercase">2018 - 2020</span>
+<h3 class="font-headline-md text-headline-md mt-2">Mizzima Media Group</h3>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface border-4 border-outline z-10 flex items-center justify-center">
+<div class="w-2 h-2 bg-outline rounded-full"></div>
+</div>
+<div class="md:w-1/2 md:pl-12">
+<div class="md:hidden text-center mb-4">
+<span class="font-metadata-sm text-metadata-sm text-primary uppercase">2018 - 2020</span>
+<h3 class="font-headline-md text-headline-md mt-2">Mizzima Media Group</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant bg-surface p-6 border border-outline-variant">Senior Video Journalist producing daily news segments and long-form features on regional economic shifts.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Independent Film Portfolio -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto" id="film">
+<div class="flex justify-between items-end mb-16">
+<div>
+<span class="font-metadata-sm text-metadata-sm text-primary uppercase tracking-[0.2em] block mb-2">Portfolio II</span>
+<h2 class="font-headline-lg text-headline-lg">Independent Cinema</h2>
+</div>
+<div class="font-label-md text-label-md text-primary flex items-center gap-2 group cursor-pointer">
+                    View Filmography <span class="material-symbols-outlined">open_in_new</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-section-gap">
+<!-- Film 1 -->
+<div class="group">
+<div class="relative overflow-hidden border border-outline-variant aspect-[4/5] md:aspect-video mb-8">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A dramatic cinematic frame from a documentary film titled 'Queen of Trash'. It shows a profile silhouette of a woman standing atop a mountain of discarded plastic, looking out over a hazy, industrial horizon. The color palette is muted with industrial grays and deep blacks, highlighted by a sharp Blue Light accent on the horizon line. The composition is brutalist and stark." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn9-FujhpQkwW5Ngrv1rDjkpLTXP83mkgAGJ7PYyMIRrj07hVgTTdZDio3JSvqRI_5ggeA4lHV2V3GufnfP1HuaA8bu_MQ9jBazyXcZokoQ3rBnW_sJDXmq1wXFvgV_IPzOcMPfpTVVXs88VkApfzf430qItiCpF2uSTN9Zyu8LEJxmBIqHHFYfqyXXNl2f0oX8ZRc2AYeCcnHEYUfEW2dgwQm2ZtA2zx0qG0LC5WeWdWzFYl_rXSNmbRxMwTP5gAOL9xbbi0uCSKF"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-[80px] text-primary" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md mb-2">Queen of Trash</h3>
+<div class="flex gap-4 font-metadata-sm text-metadata-sm text-on-surface-variant uppercase">
+<span>24 Mins</span>
+<span>Documentary</span>
+<span class="text-primary">Award Winner</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline">bookmark</span>
+</div>
+</div>
+<!-- Film 2 -->
+<div class="group">
+<div class="relative overflow-hidden border border-outline-variant aspect-[4/5] md:aspect-video mb-8">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A moody, atmospheric scene from the film 'The Last Day'. A close-up of an old, weathered radio sitting on a wooden table, illuminated by a single harsh beam of light in an otherwise pitch-black room. The image feels archival and timeless, utilizing sharp edges and high contrast to evoke a sense of finality and serious intent. The style is cinematic brutalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuOREYJZRIRxUVgQ5KCzztATyiNqw9tzui-xqkVqDR2Mi6uHRNrJ80ltk6ukc95drW694gD7MbgOcGzZqbAJ_pY6zYJoMqLXnYOayEwrd1HeJAs8QNl5DnvGWJTIW7pwCilAYO4e4urxL32xg9QhgrSnAdMahRXWx3APd4FUooUCj7NXzULsjKY4sbm4qSDKtfs6_lKSMhXmJTThiAqSDcHl_OEYv3yWkpkOdKdsWBGxHgB-rsV9oYQ9r29PCmTduqDCAcTN9UtmUl"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-[80px] text-primary" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-md text-headline-md mb-2">The Last Day</h3>
+<div class="flex gap-4 font-metadata-sm text-metadata-sm text-on-surface-variant uppercase">
+<span>15 Mins</span>
+<span>Short Film</span>
+<span>2022</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline">bookmark</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto text-center border-t-2 border-outline-variant">
+<h2 class="font-display-lg text-[48px] md:text-display-lg mb-12">Let's Tell the Truth Together.</h2>
+<div class="flex flex-col md:flex-row justify-center gap-gutter">
+<button class="px-12 py-6 bg-primary text-on-primary font-label-md text-label-md uppercase tracking-widest hover:bg-transparent hover:text-primary border-2 border-primary transition-all duration-300">
+                    Partner on a Project
+                </button>
+<button class="px-12 py-6 border-2 border-outline text-on-surface font-label-md text-label-md uppercase tracking-widest hover:border-primary hover:text-primary transition-all duration-300">
+                    Contact for Press
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t-2 border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-section-gap max-w-[1440px] mx-auto">
+<div class="flex flex-col items-center md:items-start gap-4 mb-8 md:mb-0">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">May Thazin Lei</div>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 May Thazin Lei. All Rights Reserved.</p>
+</div>
+<div class="flex gap-gutter items-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary underline decoration-2 underline-offset-4 transition-all duration-300" href="#">Instagram</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary underline decoration-2 underline-offset-4 transition-all duration-300" href="#">Vimeo</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary underline decoration-2 underline-offset-4 transition-all duration-300" href="#">LinkedIn</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary underline decoration-2 underline-offset-4 transition-all duration-300" href="#">Email</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll reveal interaction
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>
